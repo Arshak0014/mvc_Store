@@ -1,12 +1,4 @@
-<style>
-    .nav-link{
-        display: block;
-        padding: 0.5rem 1rem;
-        background: gainsboro;
-        margin-bottom: 22px;
-        font-weight: bold;
-    }
-</style>
+
 <div>
     <div style="display: flex; justify-content: space-between">
         <h2>Categories</h2>
@@ -32,8 +24,8 @@
                 <td><?= $category['name'] ?></td>
                 <td><?= $category['create_date'] ?></td>
                 <td><?= $category['update_date'] ?></td>
-                <td style="text-align: center" class="delete"><a href="/admin/category/delete/<?= $category['id'] ?>" class="deleteF" data-id="">✘</a></td>
-                <td style="text-align: center" class="update"><a href="/admin/category/update/<?= $category['id'] ?>">↻</a>
+                <td style="text-align: center" class="delete"><a href="/admin/category/delete/<?= $category['id']; ?>" class="deleteF" data-id="">✘</a></td>
+                <td style="text-align: center" class="update"><a href="/admin/category/update/<?= $category['id']; ?>">↻</a>
                 </td>
             </tr>
 

@@ -12,25 +12,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- Material Kit CSS -->
     <link href="../../../assets_admin/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <link rel="stylesheet" href="../../../assets_admin/style.css">
 </head>
 
 <body>
 <div class="wrapper ">
     <div class="sidebar" data-color="purple" data-background-color="white">
-        <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
         <div class="logo">
-            <a href="" class="simple-text logo-mini">
+            <a class="simple-text logo-mini">
                 Administrator
             </a>
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item active  ">
-                    <a class="nav-link" href="/admin">
+                    <a style="background: #32383e" class="nav-link" href="/admin">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
@@ -80,6 +77,5 @@
                 </div>
             </div>
         </nav>
-        <!-- End Navbar -->
 
 

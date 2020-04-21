@@ -2,14 +2,12 @@
 
     <h2>Update Categories</h2>
 
-    <input style="padding: 8px" type="text" name="categoryName"/><br>
-    <?php var_dump($data); ?>
-
+    <input style="padding: 8px" type="text" name="categoryName" value="<?=$data[1]['name'] ?>"/><br>
 
     <div>
-        <?php if (isset($data) && is_array($data)): ?>
+        <?php if (isset($data[0]) && is_array($data[0])): ?>
             <ul style="list-style: none;padding: 0;margin-top: 20px;">
-                <?php foreach ($data as $error): ?>
+                <?php foreach ($data[0] as $error): ?>
                     <li style="color: red;">* <?php echo $error; ?></li>
                 <?php endforeach; ?>
             </ul>
@@ -17,5 +15,5 @@
     </div>
     <button style="margin-top: 10px" class="btn btn-success" name="submit" type="submit">Update</button>
 
-    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/product/">TABLE</a>
+    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/category/">TABLE</a>
 </form>

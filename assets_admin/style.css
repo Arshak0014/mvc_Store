@@ -1,0 +1,14 @@
+.nav-link{
+    display: block;
+    padding: 0.5rem 1rem;
+    background: gainsboro;
+    margin-bottom: 22px;
+    font-weight: bold;
+}
+
+.dashboard_letters{
+    font-size: 100px;
+    font-weight: bold;
+    color: darkgrey;
+    padding-top: 100px;
+}

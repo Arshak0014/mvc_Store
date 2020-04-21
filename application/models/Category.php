@@ -25,7 +25,6 @@ class Category
         }
         return $categoryList;
 
-
     }
 
     public static function createCategory($name)
@@ -61,6 +60,20 @@ class Category
         $result->bindParam(':name', $name, \PDO::PARAM_STR);
 
         return $result->execute();
+    }
+
+    public static function getCategoryById($id){
+        $db = Db::getConnection();
+
+        $sql = 'SELECT * FROM categories WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
+        $result->execute();
+
+        return $result->fetch();
     }
 
 }

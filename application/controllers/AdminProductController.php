@@ -18,7 +18,6 @@ class AdminProductController extends AdminBaseController
 
         $productsList = Product::getProductsListAdmin();
 
-
         $this->view->setTitle('Admin Products');
         $this->view->render('admin/product/index',$productsList);
 
@@ -55,6 +54,59 @@ class AdminProductController extends AdminBaseController
         $this->view->render('admin/product/create',$this->errors);
 
         return true;
+    }
+
+    public function updateAction($id){
+
+        AdminBase::checkAdmin();
+
+        $productsData = Product::getProductById($id);
+
+        if (isset($_POST['submit'])){
+            $name = $_POST['productName'];
+            $description = $_POST['productDescription'];
+            $price = $_POST['productPrice'];
+
+            if (!isset($name) || empty($name)) {
+                $this->errors[] = 'Name input is empty';
+            }
+            if (!isset($description) || empty($description)) {
+                $this->errors[] = 'Description input is empty';
+            }
+            if (!isset($price) || empty($price)) {
+                $this->errors[] = 'Price input is empty';
+            }
+            if ($this->errors == false) {
+                Product::updateProductId($id,$name,$description,$price);
+                View::redirect('/admin/product');
+            }
+        }
+
+        $this->view->setTitle('Admin Product Update');
+        $this->view->render('admin/product/update',[$this->errors,$productsData]);
+
+        return true;
+    }
+
+    public function deleteAction($id){
+        AdminBase::checkAdmin();
+
+        $productsData = Product::getProductById($id);
+
+        if (isset($_POST['submit'])) {
+
+            Product::deleteProductId($id);
+
+            header("Location: /admin/product");
+        }
+
+
+        $this->view->setTitle('Admin Product Delete');
+        $this->view->render('admin/product/delete',$productsData);
+
+        return true;
+
+
     }
 
 }

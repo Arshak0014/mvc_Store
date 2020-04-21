@@ -42,4 +42,43 @@ class Product
         return $result->execute();
     }
 
+    public static function updateProductId($id,$name,$description,$price){
+        $db = Db::getConnection();
+
+        $sql = 'UPDATE products SET name = :name, description = :description, price = :price WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        $result->bindParam(':name', $name, \PDO::PARAM_STR);
+        $result->bindParam(':description', $description, \PDO::PARAM_STR);
+        $result->bindParam(':price', $price, \PDO::PARAM_INT);
+
+        return $result->execute();
+    }
+
+    public static function deleteProductId($id)
+    {
+        $db = Db::getConnection();
+
+        $sql = 'DELETE FROM products WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    public static function getProductById($id){
+        $db = Db::getConnection();
+
+        $sql = 'SELECT * FROM products WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
+        $result->execute();
+
+        return $result->fetch();
+    }
+
 }

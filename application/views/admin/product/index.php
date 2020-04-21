@@ -1,12 +1,4 @@
-<style>
-    .nav-link{
-        display: block;
-        padding: 0.5rem 1rem;
-        background: gainsboro;
-        margin-bottom: 22px;
-        font-weight: bold;
-    }
-</style>
+
 <div>
     <div style="display: flex; justify-content: space-between">
         <h2>Products</h2>
@@ -38,8 +30,8 @@
                 <td><?= $product['price'] ?></td>
                 <td><?= $product['create_date'] ?></td>
                 <td><?= $product['update_date'] ?></td>
-                <td style="text-align: center" class="delete"><a href="/admin/category/delete/<?php echo $product['id']; ?>" class="deleteF" data-id="">✘</a></td>
-                <td style="text-align: center" class="update"><a href="/admin/category/update/<?= $product['id'] ?>">↻</a>
+                <td style="text-align: center" class="delete"><a href="/admin/product/delete/<?= $product['id']; ?>" class="deleteF" data-id="">✘</a></td>
+                <td style="text-align: center" class="update"><a href="/admin/product/update/<?= $product['id']; ?>">↻</a>
                 </td>
             </tr>
 

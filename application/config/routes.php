@@ -54,7 +54,7 @@ return [
         'controller' => 'adminProduct',
         'action' => 'create',
     ],
-    'admin/product/update' => [
+    'admin/product/update/([1-9]+)' => [
         'controller' => 'adminProduct',
         'action' => 'update',
     ],

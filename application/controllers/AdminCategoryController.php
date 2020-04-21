@@ -54,6 +54,8 @@ class AdminCategoryController extends AdminBaseController
 
         AdminBase::checkAdmin();
 
+        $categoriesData = Category::getCategoryById($id);
+
         if (isset($_POST['submit'])){
             $name = $_POST['categoryName'];
 
@@ -66,15 +68,17 @@ class AdminCategoryController extends AdminBaseController
             }
         }
 
-
         $this->view->setTitle('Admin Category Update');
-        $this->view->render('admin/category/update',$this->errors);
+        $this->view->render('admin/category/update',[$this->errors,$categoriesData]);
 
         return true;
     }
 
     public function deleteAction($id){
         AdminBase::checkAdmin();
+
+        $categoriesData = Category::getCategoryById($id);
+
         if (isset($_POST['submit'])) {
 
             Category::deleteCategoryId($id);
@@ -82,9 +86,8 @@ class AdminCategoryController extends AdminBaseController
             header("Location: /admin/category");
         }
 
-
         $this->view->setTitle('Admin Category Delete');
-        $this->view->render('admin/category/delete');
+        $this->view->render('admin/category/delete',$categoriesData);
 
         return true;
     }

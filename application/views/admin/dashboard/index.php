@@ -1,3 +1,3 @@
-<div align="center">
-    <p>Admin dashboard</p>
+<div class="dashboard_letters" align="center">
+    <p>Admin Dashboard</p>
 </div>
