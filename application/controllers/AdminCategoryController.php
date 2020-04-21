@@ -51,18 +51,36 @@ class AdminCategoryController extends AdminBaseController
     }
 
     public function updateAction($id){
+
         AdminBase::checkAdmin();
 
-        var_dump($id);
+        if (isset($_POST['submit'])){
+            $name = $_POST['categoryName'];
+
+            if (!isset($name) || empty($name)) {
+                $this->errors[] = 'Create input';
+            }
+            if ($this->errors == false) {
+                Category::updateCategoryId($id, $name);
+                View::redirect('/admin/category');
+            }
+        }
+
+
         $this->view->setTitle('Admin Category Update');
-        $this->view->render('admin/category/update');
+        $this->view->render('admin/category/update',$this->errors);
 
         return true;
     }
 
     public function deleteAction($id){
         AdminBase::checkAdmin();
-        //var_dump($id);
+        if (isset($_POST['submit'])) {
+
+            Category::deleteCategoryId($id);
+
+            header("Location: /admin/category");
+        }
 
 
         $this->view->setTitle('Admin Category Delete');

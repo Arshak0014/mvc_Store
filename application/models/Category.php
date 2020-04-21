@@ -40,7 +40,7 @@ class Category
         return $result->execute();
     }
 
-    public static function deleteCategoryById($id)
+    public static function deleteCategoryId($id)
     {
         $db = Db::getConnection();
 
@@ -48,6 +48,18 @@ class Category
 
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    public static function updateCategoryId($id, $name){
+        $db = Db::getConnection();
+
+        $sql = 'UPDATE categories SET name = :name WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        $result->bindParam(':name', $name, \PDO::PARAM_STR);
+
         return $result->execute();
     }
 

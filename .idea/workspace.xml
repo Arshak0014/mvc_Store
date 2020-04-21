@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/category/delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/category/delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/category/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layouts/admin_header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/admin_header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/category/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/category/update.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +30,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../myTask" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
@@ -87,6 +82,9 @@
       <workItem from="1587378746329" duration="21039000" />
       <workItem from="1587413356998" duration="735000" />
       <workItem from="1587450493095" duration="13116000" />
+      <workItem from="1587465310487" duration="482000" />
+      <workItem from="1587465935735" duration="237000" />
+      <workItem from="1587466907850" duration="5419000" />
     </task>
     <servers />
   </component>
@@ -106,10 +104,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="417" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1587456755594" />
-    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1587458087252">
+    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1587469239154">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587458087252" />
+    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587469239154" />
     <state x="467" y="179" key="NewPhpClassDialog" timestamp="1587454801615">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -118,18 +116,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="522" y="288" key="NewPhpFileDialog/0.0.1366.728@0.0.1366.728" timestamp="1587159219189" />
-    <state x="188" y="0" key="SettingsEditor" timestamp="1587465366123">
+    <state x="188" y="0" key="SettingsEditor" timestamp="1587466172601">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="188" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587465366123" />
+    <state x="188" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587466172601" />
     <state x="96" y="96" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587391304699">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="96" y="96" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1587391304699" />
-    <state x="343" y="146" key="com.intellij.ide.util.TipDialog" timestamp="1587451283463">
+    <state x="343" y="146" key="com.intellij.ide.util.TipDialog" timestamp="1587465943820">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="343" y="146" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587451283463" />
+    <state x="343" y="146" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1587465943820" />
     <state x="380" y="0" width="606" height="728" key="find.popup" timestamp="1587399578242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
