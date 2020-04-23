@@ -1,12 +1,12 @@
 <?php
 
-namespace application\lib;
+namespace application\components;
 
 
 class Db {
 
      public static function getConnection() {
-         $paramsPath = __DIR__.'/../config/db.php';
+         $paramsPath = __DIR__ . '/../config/db.php';
          $params = include ($paramsPath);
 
          $dsn = "mysql:host={$params['host']}; dbname={$params['name']}";

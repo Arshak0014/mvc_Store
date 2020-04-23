@@ -257,7 +257,7 @@
 
 }));
 /**
- * @namespace jvm Holds core methods and classes used by jVectorMap.
+ * @namespace jvm Holds components methods and classes used by jVectorMap.
  */
 var jvm = {
 

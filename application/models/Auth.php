@@ -4,7 +4,7 @@
 namespace application\models;
 
 
-use application\lib\Db;
+use application\components\Db;
 
 class Auth
 {

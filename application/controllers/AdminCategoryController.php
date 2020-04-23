@@ -4,9 +4,9 @@
 namespace application\controllers;
 
 
-use application\core\AdminBaseController;
-use application\core\AdminBase;
-use application\core\View;
+use application\base\AdminBaseController;
+use application\base\AdminBase;
+use application\components\View;
 use application\models\Category;
 
 

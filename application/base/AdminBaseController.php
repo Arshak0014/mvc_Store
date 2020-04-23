@@ -6,9 +6,9 @@
  * Time: 20:22
  */
 
-namespace application\core;
+namespace application\base;
 
-use application\core\View;
+use application\components\View;
 
 class AdminBaseController
 {

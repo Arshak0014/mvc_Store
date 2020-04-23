@@ -3,7 +3,7 @@
 
 namespace application\controllers;
 
-use application\core\Controller;
+use application\base\Controller;
 use application\models\User;
 
 class CabinetController extends Controller

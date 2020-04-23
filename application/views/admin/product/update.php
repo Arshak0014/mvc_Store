@@ -1,9 +1,19 @@
 <form method="post">
 
     <h2>Update Product</h2>
+    <select style="padding: 8px; width: 260px;" name="category">
+        <?php
+            foreach ($data[2] as $y){
+                ?>
+                <option value="<?= $y['id']?>" <?php if ($y['id'] == $data[1]['categories_id']) { ?> selected <?php } ?> ><?= $y['name']?></option>
+                <?php }
+            ?>
 
-    <input style="padding: 8px" type="text" name="productName" value="<?=$data[1]['name'] ?>"/><br>
-    <input style="padding: 8px; margin-top: 10px" type="text" name="productDescription" value="<?=$data[1]['description'] ?>"/><br>
+
+    </select><br>
+    <input style="padding: 8px; margin-top: 10px" type="text" name="productName" value="<?=$data[1]['name'] ?>"/><br>
+    <textarea name="productDescription" style="margin-top: 10px;padding: 8px;"
+              placeholder="Write escription" cols="30" rows="10"><?=$data[1]['description'] ?></textarea><br>
     <input style="padding: 8px; margin-top: 10px" type="text" name="productPrice" value="<?=$data[1]['price'] ?>"/><br>
 
     <div>

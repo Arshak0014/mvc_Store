@@ -1,8 +1,8 @@
 <?php
 
-require 'application/lib/Dev.php';
 
-use application\core\Router;
+
+use application\components\Router;
 
 spl_autoload_register(function ($class) {
     $path = str_replace('\\','/',$class.'.php');
@@ -10,6 +10,16 @@ spl_autoload_register(function ($class) {
         require $path;
     }
 });
+
+ini_set('display_errors',1);
+error_reporting(E_ALL);
+
+function debug($str){
+    echo '<pre>';
+    var_dump($str);
+    echo '</pre>';
+    exit;
+}
 
 session_start();
 

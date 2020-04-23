@@ -1,11 +1,11 @@
 <?php
 
 
-namespace application\core;
+namespace application\base;
 
 
 
-use application\core\View;
+use application\components\View;
 
 abstract class Controller
 {

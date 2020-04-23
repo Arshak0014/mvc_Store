@@ -10,7 +10,7 @@
         <tr>
             <th scope="col">id</th>
             <th scope="col">Name</th>
-            <th scope="col">Category id</th>
+            <th scope="col">Category</th>
             <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Create date</th>
@@ -25,13 +25,16 @@
             <tr>
                 <th scope="row"><?= $product['id'] ?></th>
                 <td><?= $product['name'] ?></td>
-                <td><?= $product['categories_id'] ?></td>
+                <td><?= $product['cat_name'] ?></td>
                 <td><?= $product['description'] ?></td>
                 <td><?= $product['price'] ?></td>
                 <td><?= $product['create_date'] ?></td>
                 <td><?= $product['update_date'] ?></td>
-                <td style="text-align: center" class="delete"><a href="/admin/product/delete/<?= $product['id']; ?>" class="deleteF" data-id="">✘</a></td>
-                <td style="text-align: center" class="update"><a href="/admin/product/update/<?= $product['id']; ?>">↻</a>
+                <td style="text-align: center;" class="delete">
+                    <a style="color: darkred;font-size: 20px;font-weight: bold;" href="/admin/product/delete/<?= $product['id']; ?>" class="deleteF" data-id="">✘</a>
+                </td>
+                <td style="text-align: center;" class="update">
+                    <a style=";color: green;font-size: 20px;font-weight: bold;" href="/admin/product/update/<?= $product['id']; ?>">↻</a>
                 </td>
             </tr>
 

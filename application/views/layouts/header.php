@@ -86,7 +86,7 @@
                             <li>
                                 <a href="" class="nav-link">Contact</a>
                             </li>
-                            <?php if(\application\models\User::isGuest()): ?>
+                            <?php if(\application\components\Auth::isGuest()): ?>
                             <li>
                                 <a style="color: #32dbc6; font-weight: bold" href="/account/login/" class="nav-link">Sign in / Sign up</a>
                             </li>

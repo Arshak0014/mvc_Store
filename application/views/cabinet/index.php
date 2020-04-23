@@ -1,5 +1,5 @@
 <?php
-use application\models\User;
+use application\components\Auth;
 ?>
 
 <div style="margin-top: 105px">
@@ -44,7 +44,7 @@ use application\models\User;
     </div>
 </div>
 <?php
-if (User::isGuest()){
+if (Auth::isGuest()){
     header('location: /account/login/');
 }
 ?>

@@ -36,11 +36,11 @@ return [
         'controller' => 'adminCategory',
         'action' => 'create',
     ],
-    'admin/category/update/([1-9]+)' => [
+    'admin/category/update/([0-9]+)' => [
         'controller' => 'adminCategory',
         'action' => 'update',
     ],
-    'admin/category/delete/([1-9]+)' => [
+    'admin/category/delete/([0-9]+)' => [
         'controller' => 'adminCategory',
         'action' => 'delete',
     ],
@@ -54,11 +54,11 @@ return [
         'controller' => 'adminProduct',
         'action' => 'create',
     ],
-    'admin/product/update/([1-9]+)' => [
+    'admin/product/update/([0-9]+)' => [
         'controller' => 'adminProduct',
         'action' => 'update',
     ],
-    'admin/product/delete/([1-9]+)' => [
+    'admin/product/delete/([0-9]+)' => [
         'controller' => 'adminProduct',
         'action' => 'delete',
     ],

@@ -3,9 +3,9 @@
 namespace application\controllers;
 
 
-use application\core\Controller;
-use application\core\View;
-use application\lib\Db;
+use application\base\Controller;
+use application\components\View;
+use application\components\Db;
 use application\models\User;
 
 

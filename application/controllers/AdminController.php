@@ -4,8 +4,8 @@
 namespace application\controllers;
 
 
-use application\core\AdminBaseController;
-use application\core\AdminBase;
+use application\base\AdminBaseController;
+use application\base\AdminBase;
 
 
 class AdminController extends AdminBaseController

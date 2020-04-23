@@ -24,8 +24,11 @@
                 <td><?= $category['name'] ?></td>
                 <td><?= $category['create_date'] ?></td>
                 <td><?= $category['update_date'] ?></td>
-                <td style="text-align: center" class="delete"><a href="/admin/category/delete/<?= $category['id']; ?>" class="deleteF" data-id="">✘</a></td>
-                <td style="text-align: center" class="update"><a href="/admin/category/update/<?= $category['id']; ?>">↻</a>
+                <td style="text-align: center" class="delete">
+                    <a style="color: darkred;font-size: 20px;font-weight: bold;" href="/admin/category/delete/<?= $category['id']; ?>" class="deleteF" data-id="">✘</a>
+                </td>
+                <td style="text-align: center" class="update">
+                    <a style="color: green;font-size: 20px;font-weight: bold;" href="/admin/category/update/<?= $category['id']; ?>">↻</a>
                 </td>
             </tr>
 

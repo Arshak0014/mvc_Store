@@ -2,7 +2,7 @@
 
 namespace application\controllers;
 
-use application\core\Controller;
+use application\base\Controller;
 
 
 class MainController extends Controller

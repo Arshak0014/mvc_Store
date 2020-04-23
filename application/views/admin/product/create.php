@@ -1,15 +1,26 @@
+
 <form method="post">
 
-    <h2>Create a category</h2>
+    <h2>Create a product</h2>
 
-    <input style="padding: 8px" placeholder="Write Products" type="text" name="productName"/><br>
-    <input style="padding: 8px; margin-top: 10px" placeholder="Write Description" type="text" name="productDescription"/><br>
+    <select style="padding: 8px; width: 260px;" name="category">
+        <option disabled selected>Select Category</option>
+        <?php foreach($data[1] as $x):  ?>
+            <option value="<?= $x['id']?>" ><?= $x['name']?></option>
+        <?php endforeach; ?>
+    </select><br>
+
+    <input style="padding: 8px; margin-top: 10px" placeholder="Write Products" type="text" name="productName"/><br>
+
+    <textarea name="productDescription" style="margin-top: 10px;padding: 8px;"
+              placeholder="Write escription" cols="30" rows="10"></textarea><br>
+
     <input style="padding: 8px; margin-top: 10px" placeholder="Write Price" type="text" name="productPrice"/><br>
 
     <div>
-        <?php if (isset($data) && is_array($data)): ?>
+        <?php if (isset($data[0]) && is_array($data[0])): ?>
             <ul style="list-style: none;padding: 0;margin-top: 20px;">
-                <?php foreach ($data as $error): ?>
+                <?php foreach ($data[0] as $error): ?>
                     <li style="color: red;">* <?php echo $error; ?></li>
                 <?php endforeach; ?>
             </ul>
