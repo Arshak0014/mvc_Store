@@ -32,37 +32,56 @@ class AdminProductController extends AdminBaseController
         $dataCategories = Product::getCategoriesNameAndId();
 
 
-        if (isset($_POST['submit'])) {
+        if (!empty($_POST) && isset($_POST['submit'])){
+            $model = new Product($_POST);
 
-            $name = $_POST['productName'];
-            $categories_id = $_POST['category'];
-            $description = $_POST['productDescription'];
-            $price = $_POST['productPrice'];
+            $validate = $model->validate();
 
-
-            if (!isset($name) || empty($name)) {
-                $this->errors[] = 'Create name';
-            }
-            if (!isset($categories_id) || empty($categories_id)) {
-                $this->errors[] = 'Select a category';
-            }
-            if (!isset($description) || empty($description)) {
-                $this->errors[] = 'Create description';
-            }
-            if (!isset($price) || empty($price)) {
-                $this->errors[] = 'Create price';
+            if (!empty($validate)){
+                $this->view->render('admin/product/create',[$validate,$dataCategories]);
             }
 
-            if ($this->errors == false) {
-                Product::createProduct($name, $categories_id, $description,$price);
-
+            if ($model->createProduct()){
                 View::redirect('/admin/product');
             }
         }
+
         $this->view->setTitle('Admin Product Create');
-        $this->view->render('admin/product/create',[$this->errors,$dataCategories]);
+        $this->view->render('admin/product/create',['',$dataCategories]);
 
         return true;
+
+//        AdminBase::checkAdmin();
+//        $dataCategories = Product::getCategoriesNameAndId();
+//
+//        if (isset($_POST['submit'])) {
+//
+//            $name = $_POST['productName'];
+//            $categories_id = $_POST['category'];
+//            $description = $_POST['productDescription'];
+//            $price = $_POST['productPrice'];
+//            if (!isset($name) || empty($name)) {
+//                $this->errors[] = 'Create name';
+//            }
+//            if (!isset($categories_id) || empty($categories_id)) {
+//                $this->errors[] = 'Select a category';
+//            }
+//            if (!isset($description) || empty($description)) {
+//                $this->errors[] = 'Create description';
+//            }
+//            if (!isset($price) || empty($price)) {
+//                $this->errors[] = 'Create price';
+//            }
+//            if ($this->errors == false) {
+//                Product::createProduct($name, $categories_id, $description,$price);
+//
+//                View::redirect('/admin/product');
+//            }
+//        }
+//        $this->view->setTitle('Admin Product Create');
+//        $this->view->render('admin/product/create',[$this->errors,$dataCategories]);
+//
+//        return true;
     }
 
     public function updateAction($id){
@@ -73,35 +92,52 @@ class AdminProductController extends AdminBaseController
 
         $productsData = Product::getProductById($id);
 
-        if (isset($_POST['submit'])){
-            $name = $_POST['productName'];
-            $categories_id = $_POST['category'];
-            $description = $_POST['productDescription'];
-            $price = $_POST['productPrice'];
+        if (!empty($_POST) && isset($_POST['submit'])) {
+            $model = new Product($_POST);
 
-            if (!isset($name) || empty($name)) {
-                $this->errors[] = 'Name input is empty';
+            $validate = $model->validate();
+            if (!empty($validate)) {
+                $this->view->render('admin/product/update',[$validate,$productsData,$dataCategories]);
             }
-            if (!isset($categories_id) || empty($categories_id)) {
-                $this->errors[] = 'Category input is empty';
-            }
-            if (!isset($description) || empty($description)) {
-                $this->errors[] = 'Description input is empty';
-            }
-            if (!isset($price) || empty($price)) {
-                $this->errors[] = 'Price input is empty';
-            }
-            if ($this->errors == false) {
-                Product::updateProductId($id,$name, $categories_id,$description,$price);
+            if ($model->updateProductId($productsData['id'])){
                 View::redirect('/admin/product');
             }
         }
 
+//        if (isset($_POST['submit'])){
+//            $name = $_POST['productName'];
+//            $categories_id = $_POST['category'];
+//            $description = $_POST['productDescription'];
+//            $price = $_POST['productPrice'];
+//
+//            if (!isset($name) || empty($name)) {
+//                $this->errors[] = 'Name input is empty';
+//            }
+//            if (!isset($categories_id) || empty($categories_id)) {
+//                $this->errors[] = 'Category input is empty';
+//            }
+//            if (!isset($description) || empty($description)) {
+//                $this->errors[] = 'Description input is empty';
+//            }
+//            if (!isset($price) || empty($price)) {
+//                $this->errors[] = 'Price input is empty';
+//            }
+//            if ($this->errors == false) {
+//                Product::updateProductId($id,$name, $categories_id,$description,$price);
+//                View::redirect('/admin/product');
+//            }
+//        }
+
         $this->view->setTitle('Admin Product Update');
-        $this->view->render('admin/product/update',[$this->errors,$productsData,$dataCategories]);
+        $this->view->render('admin/product/update',['',$productsData,$dataCategories]);
 
         return true;
     }
+
+
+//$this->view->setTitle('Admin Product Update');
+//$this->view->render('admin/product/update',[$this->errors,$productsData,$dataCategories]);
+
 
     public function deleteAction($id){
         AdminBase::checkAdmin();

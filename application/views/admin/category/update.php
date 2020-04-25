@@ -1,14 +1,17 @@
+
 <form method="post">
 
     <h2>Update Categories</h2>
 
-    <input style="padding: 8px" type="text" name="categoryName" value="<?=$data[1]['name'] ?>"/><br>
+
+    <input style="padding: 8px" type="text" name="category_name" value="<?php echo $data[1]['name']; ?>
+"/><br>
 
     <div>
         <?php if (isset($data[0]) && is_array($data[0])): ?>
             <ul style="list-style: none;padding: 0;margin-top: 20px;">
                 <?php foreach ($data[0] as $error): ?>
-                    <li style="color: red;">* <?php echo $error; ?></li>
+                    <li style="color: red;"> <?php echo $error; ?></li>
                 <?php endforeach; ?>
             </ul>
         <?php endif; ?>

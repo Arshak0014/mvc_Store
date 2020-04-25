@@ -98,15 +98,16 @@ class User
     }
 
 
-    public static function register ($login, $email, $password) {
+    public static function register ($first_name,$last_name, $email, $password) {
         $db = Db::getConnection();
 
-        $sql = 'INSERT INTO users (login, email, password)' .
-            'VALUES (:login, :email, :password)';
+        $sql = 'INSERT INTO users (first_name, last_name,email, password)' .
+            'VALUES (:first_name, :last_name, :email, :password)';
 
         $result = $db->prepare($sql);
 
-        $result->bindParam(':login', $login, \PDO::PARAM_STR);
+        $result->bindParam(':first_name', $first_name, \PDO::PARAM_STR);
+        $result->bindParam(':last_name', $last_name, \PDO::PARAM_STR);
         $result->bindParam(':email', $email, \PDO::PARAM_STR);
         $result->bindParam(':password', $password, \PDO::PARAM_STR);
 
@@ -128,6 +129,11 @@ class User
             }
         }
         return $pass;
+    }
+
+    public static function hashPassword($password)
+    {
+        return $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     }
 
     public static function getUserById($id)

@@ -4,18 +4,24 @@ namespace application\controllers;
 
 
 use application\base\Controller;
+use application\components\Auth;
+use application\components\Message;
 use application\components\View;
 use application\components\Db;
+use application\models\LoginForm;
+use application\models\SignUpForm;
 use application\models\User;
 
 
 
 class AccountController extends Controller
 {
-    public $errors;
+
+    public $errors = '';
 
     public function loginAction()
     {
+
 
         $email = false;
         $password = false;
@@ -71,51 +77,56 @@ class AccountController extends Controller
         return true;
     }
 
+//    public function loginAction()
+//    {
+//        if (!empty($_POST) && isset($_POST['submit'])){
+//            $model = new LoginForm($_POST);
+//
+//            var_dump($model);
+//
+//            $validate = $model->validate();
+//
+//            $arrayModel = get_object_vars($model);
+//
+//            if (!empty($validate)) {
+//                $this->view->render('account/login',[$validate,$arrayModel]);
+//            }
+//            if ($model->login()) {
+//                Auth::goHome();
+//            }
+//        }
+//        $this->view->render('account/login',[]);
+//
+//        return true;
+//    }
+
+
     public function registerAction()
     {
-        $login = '';
-        $email = '';
-        $password = '';
+        $confirmRegister = '';
 
-        $result = false;
+        if (!empty($_POST) && isset($_POST['submit'])){
+            $model = new SignUpForm($_POST);
 
-        if (isset($_POST['submit'])){
-            $login = $_POST['login'];
-            $email = $_POST['email'];
-            $password = $_POST['password'];
+            $validate = $model->validate();
 
-            $this->errors = false;
+            $arrayModel = get_object_vars($model);
 
-            if (!User::checkName($login)){
-                $this->errors[] = 'login not correct chars';
+            if (!empty($validate)) {
+                $this->view->render('account/register',[$validate,$arrayModel]);
             }
-
-            if (!User::checkEmail($email)){
-                $this->errors[] = 'Email is not required';
+            if ($model->register()) {
+                 Message::set_message('You are registered !!! :)');
             }
-
-            if (!User::checkPassword($password)){
-                $this->errors[] = 'Password mast be min 4 chars';
-            }
-
-            if (User::checkEmailExists($email)){
-                $this->errors[] = 'this email already exists';
-            }
-
-            if (User::checkPasswordExists($password)){
-                $this->errors[] = 'this password already exists';
-            }
-
-            if ($this->errors == false){
-                $result = User::register($login, $email, $password);
-            }
-
         }
+
         $this->view->setTitle('Sign up Page');
-        $this->view->render('account/register',[$this->errors,[$login,$email,$password],$result]);
+        $this->view->render('account/register');
 
         return true;
     }
+
+
 
     public function cabinetAction()
     {
@@ -128,13 +139,7 @@ class AccountController extends Controller
 
         unset($_SESSION["user"]);
 
-        header("location: /account/login");
 
-
-        if(isset($_COOKIE['email']) and isset($_COOKIE['cookie_key'])):
-            setcookie('email', '', time()-7000000);
-            setcookie('cookie_key', '', time()-7000000);
-        endif;
 
         header('location: /account/login');
     }
