@@ -2,6 +2,7 @@
 
 namespace application\base;
 
+use application\components\View;
 use application\models\User;
 
 
@@ -16,10 +17,12 @@ abstract class AdminBase
 
         if ($user['role'] == 'admin') {
             return true;
+        }else{
+            View::errorCode('404');
         }
 
 
-        die('Are you admin? Don`t joke');
+        die();
     }
 
 }

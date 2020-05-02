@@ -61,7 +61,7 @@
 <script src="../../../assets/js/typed.js"></script>
 <script>
     var typed = new Typed('.typed-words', {
-        strings: ["Web Apps"," WordPress"," Mobile Apps"],
+        strings: ["Lorem ipsum"," Lorem ipsum "," Lorem ipsum"],
         typeSpeed: 80,
         backSpeed: 80,
         backDelay: 4000,
@@ -70,7 +70,7 @@
         showCursor: true
     });
 </script>
-
+<script src="../../../assets/js/myCart.js"></script>
 <script src="../../../assets/js/main.js"></script>
 
 

@@ -4,6 +4,7 @@
 namespace application\models;
 
 use application\components\Auth;
+use application\components\Db;
 use application\components\Validator;
 
 class LoginForm
@@ -11,14 +12,29 @@ class LoginForm
 
     public $email;
     public $password;
-//    public $rememberMe;
+    public $rememberMe;
 
     public function __construct($post)
     {
         $this->email = $post['email'];
         $this->password = $post['password'];
-//        $this->rememberMe = $post['rememberMe'];
+        $this->rememberMe = $post['rememberMe'];
     }
+
+    public static function checkRole($id){
+        $db = Db::getConnection();
+
+        $sql = 'SELECT * FROM users';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':role', $role, \PDO::PARAM_STR);
+        $result->execute();
+
+        $user = $result->fetch();
+
+        $id = $user["id"];
+    }
+
 
     public function rules()
     {

@@ -11,7 +11,6 @@
             <th scope="col">id</th>
             <th scope="col">Name</th>
             <th scope="col">Category</th>
-            <th scope="col">Description</th>
             <th scope="col">Price</th>
             <th scope="col">Create date</th>
             <th scope="col">Update date</th>
@@ -26,7 +25,6 @@
                 <th scope="row"><?= $product['id'] ?></th>
                 <td><?= $product['name'] ?></td>
                 <td><?= $product['cat_name'] ?></td>
-                <td><?= $product['description'] ?></td>
                 <td><?= $product['price'] ?></td>
                 <td><?= $product['create_date'] ?></td>
                 <td><?= $product['update_date'] ?></td>
@@ -42,5 +40,13 @@
 
         </tbody>
     </table>
+    <div>
+        <?php
+        $pagination = new \application\components\Pagination('/admin/product/','products','5','5');
+
+        $pagination->html();
+
+        ?>
+    </div>
 </div>
 

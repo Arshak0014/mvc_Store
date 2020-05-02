@@ -4,6 +4,8 @@
 
 use application\components\Router;
 
+session_start();
+
 spl_autoload_register(function ($class) {
     $path = str_replace('\\','/',$class.'.php');
     if(file_exists($path)){
@@ -21,7 +23,8 @@ function debug($str){
     exit;
 }
 
-session_start();
+
+
 
 define('ROOT', dirname(__FILE__));
 

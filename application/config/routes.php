@@ -13,13 +13,51 @@ return [
         'controller' => 'account',
         'action' => 'register',
     ],
-    'cabinet' => [
-        'controller' => 'cabinet',
+    'userProfile' => [
+        'controller' => 'userProfile',
+        'action' => 'index',
+    ],
+    'contact' => [
+        'controller' => 'contact',
+        'action' => 'index',
+    ],
+    'about' => [
+        'controller' => 'about',
         'action' => 'index',
     ],
     'account/logout' => [
         'controller' => 'account',
         'action' => 'logout',
+    ],
+
+    'product' => [
+        'controller' => 'product',
+        'action' => 'index',
+    ],
+    'product/([0-9]+)' => [
+        'controller' => 'product',
+        'action' => 'index',
+    ],
+    'product/details/([0-9]+)' => [
+        'controller' => 'product',
+        'action' => 'details',
+    ],
+    'cart' => [
+        'controller' => 'cart',
+        'action' => 'index',
+    ],
+    'cart/add/([0-9]+)' => [
+        'controller' => 'cart',
+        'action' => 'add',
+    ],
+
+    'cart/delete/([0-9]+)' => [
+        'controller' => 'cart',
+        'action' => 'delete',
+    ],
+    'cart/order/([0-9]+)' => [
+        'controller' => 'cart',
+        'action' => 'order',
     ],
 
 //    admin routes
@@ -28,7 +66,13 @@ return [
         'controller' => 'admin',
         'action' => 'index',
     ],
+
     'admin/category' => [
+        'controller' => 'adminCategory',
+        'action' => 'index',
+    ],
+
+    'admin/category/([0-9]+)' => [
         'controller' => 'adminCategory',
         'action' => 'index',
     ],
@@ -45,8 +89,12 @@ return [
         'action' => 'delete',
     ],
 
-
     'admin/product' => [
+        'controller' => 'adminProduct',
+        'action' => 'index',
+    ],
+
+    'admin/product/([0-9]+)' => [
         'controller' => 'adminProduct',
         'action' => 'index',
     ],

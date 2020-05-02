@@ -6,14 +6,12 @@ namespace application\controllers;
 
 use application\base\AdminBaseController;
 use application\base\AdminBase;
-use application\components\Message;
 use application\components\View;
 use application\models\Category;
 
 
 class AdminCategoryController extends AdminBaseController
 {
-    public $errors = false;
 
     public function indexAction(){
         AdminBase::checkAdmin();
@@ -21,7 +19,9 @@ class AdminCategoryController extends AdminBaseController
         $categoriesList = Category::getCategoriesListAdmin();
 
 
+
         $this->view->setTitle('Admin Category');
+
         $this->view->render('admin/category/index',$categoriesList);
 
         return true;
@@ -49,24 +49,9 @@ class AdminCategoryController extends AdminBaseController
 
         return true;
 
-//        AdminBase::checkAdmin();
-//        if (isset($_POST['submit'])) {
-//            $name = $_POST['categoryName'];
-//            if (!isset($name) || empty($name)) {
-//                $this->errors[] = 'Create input';
-//            }
-//            if ($this->errors == false) {
-//                Category::createCategory($name);
-//                View::redirect('/admin/category');
-//            }
-//        }
-//        $this->view->setTitle('Admin Category Create');
-//        $this->view->render('admin/category/create',$this->errors);
-//        return true;
     }
 
-//        Category::updateCategoryId($id, $name);
-//        View::redirect('/admin/category');
+
 
     public function updateAction($id){
 
@@ -81,7 +66,7 @@ class AdminCategoryController extends AdminBaseController
             if (!empty($validate)) {
                 $this->view->render('admin/category/update',[$validate,$categoriesData]);
             }
-            if ($model->updateCategoryId($categoriesData['id'])){
+            if ($model->updateCategoryById($categoriesData['id'])){
                 View::redirect('/admin/category');
             }
         }
@@ -99,7 +84,7 @@ class AdminCategoryController extends AdminBaseController
 
         if (isset($_POST['submit'])) {
 
-            Category::deleteCategoryId($id);
+            Category::deleteCategoryById($id);
 
             header("Location: /admin/category");
         }

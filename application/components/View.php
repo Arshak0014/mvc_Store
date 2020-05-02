@@ -30,6 +30,7 @@ class View
         return $this->title;
     }
 
+
     public static function redirect($url){
         header('location: ' . $url);
         exit;

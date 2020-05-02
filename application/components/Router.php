@@ -34,6 +34,20 @@ class Router
         return false;
     }
 
+    public static function getPage(){
+        $url=(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on'?"https":"http")."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $parts=explode("/",$url);
+        $paging=end($parts);
+
+        if (!isset($paging)) {
+            $page = 1;
+        } else {
+            $page = $paging;
+        }
+        return $page;
+    }
+
+
     public function getParams(){
         $url = trim($_SERVER['REQUEST_URI'],'/');
         if (!empty($url)){
@@ -45,6 +59,8 @@ class Router
     }
 
     public function run(){
+
+
         if ($this->match()){
             $path = 'application\controllers\\'.ucfirst($this->params['controller']).'Controller';
             if (class_exists($path)){

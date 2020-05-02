@@ -28,8 +28,12 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">-->
+
+
 
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -49,17 +53,29 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="mb-0">
-                        <span class="mr-3"><strong class="text-white">Phone:</strong> <a href="tel://#">+1 234 5678 9101</a></span>
-                        <span><strong class="text-white">Email:</strong> <a href="#">info@yourdomain.com</a></span>
-                    </p>
+                    U+2800;
                 </div>
                 <div class="col-md-6">
                     <ul class="social-media">
-                        <li><a href="#" class="p-2"><span class="icon-facebook"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="icon-twitter"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="icon-instagram"></span></a></li>
-                        <li><a href="#" class="p-2"><span class="icon-linkedin"></span></a></li>
+
+                            <?php if(\application\components\Auth::isGuest()): ?>
+                                <li>
+                                    <a style="color: #32dbc6; font-weight: bold" href="/account/login/" class="nav-link">Sign in / Sign up</a>
+                                </li>
+                            <?php else: ?>
+                                <li>
+                                    <a style="color: #32dbc6; font-weight: bold; margin-right: 20px;" href="/userProfile/"><i class="fa fa-user"></i> Account</a>
+                                </li>
+                                <li>
+                                    <a style="color: #32dbc6; font-weight: bold;margin-right: 20px;" href="/account/logout/"><i class="fa fa-unlock"></i> Log out</a>
+                                </li>
+                            <?php endif; ?>
+                            <li>
+                                <a style="color: crimson; font-weight: bold;position: relative;" href="/cart">
+                                    <span style="margin-right:3px;font-size: 20px;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                                    <span class="card_ic" style="" id="cart-count"><?=\application\models\Product::cartProductCount(); ?></span>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -78,26 +94,15 @@
                     <nav class="site-navigation position-relative text-right" role="navigation">
 
                         <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                            <li><a href="/" class="nav-link">Home</a></li>
-                            <li><a href="" class="nav-link">Work</a></li>
+
+                            <li><a href="/" class="header_nav_bar nav-link">Home</a></li>
+                            <li><a href="/product" class="header_nav_bar nav-link">Products</a></li>
                             <li>
-                                <a href="" class="nav-link">Services</a>
+                                <a href="/about" class="header_nav_bar nav-link">About Us</a>
                             </li>
                             <li>
-                                <a href="" class="nav-link">Contact</a>
+                                <a href="/contact" class="header_nav_bar nav-link">Contact</a>
                             </li>
-                            <?php if(\application\components\Auth::isGuest()): ?>
-                            <li>
-                                <a style="color: #32dbc6; font-weight: bold" href="/account/login/" class="nav-link">Sign in / Sign up</a>
-                            </li>
-                            <?php else: ?>
-                            <li>
-                                <a style="color: #32dbc6; font-weight: bold" href="/cabinet/"><i class="fa fa-user"></i> Account</a>
-                            </li>
-                            <li>
-                                <a style="color: #32dbc6; font-weight: bold" href="/account/logout/"><i class="fa fa-unlock"></i> Log out</a>
-                            </li>
-                            <?php endif; ?>
                         </ul>
                     </nav>
                 </div>

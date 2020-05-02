@@ -7,7 +7,6 @@ use application\base\Controller;
 use application\components\Auth;
 use application\components\Message;
 use application\components\View;
-use application\components\Db;
 use application\models\LoginForm;
 use application\models\SignUpForm;
 use application\models\User;
@@ -17,7 +16,7 @@ use application\models\User;
 class AccountController extends Controller
 {
 
-    public $errors = '';
+    public $errors;
 
     public function loginAction()
     {
@@ -29,7 +28,7 @@ class AccountController extends Controller
         if (isset($_POST['submit'])) {
 
          $email = $_POST['email'];
-            $password = $_POST['password'];
+         $password = $_POST['password'];
 
               if (!User::checkEmail($email)) {
                   $this->errors[] = 'Email is not correct';
@@ -46,18 +45,9 @@ class AccountController extends Controller
                 $this->errors[] = 'Email or password is not correct';
             } else {
 
-                $db = Db::getConnection();
+                $roleId = '';
 
-                $sql = 'SELECT * FROM users';
-
-                $result = $db->prepare($sql);
-                $result->bindParam(':role', $role, \PDO::PARAM_STR);
-                $result->execute();
-
-                $user = $result->fetch();
-
-                $roleId = $user["id"];
-
+                LoginForm::checkRole($roleId);
 
                 if ($roleId == $userId){
                     User::auth($userId);
@@ -65,7 +55,7 @@ class AccountController extends Controller
 
                 }
                     User::auth($userId);
-                    View::redirect('/cabinet/');
+                    View::redirect('/userProfile');
 
             }
 
@@ -135,14 +125,10 @@ class AccountController extends Controller
 
     public function logoutAction(){
 
-        session_start();
+        Auth::logout();
 
-        unset($_SESSION["user"]);
-
-
-
-        header('location: /account/login');
     }
+
 
 }
 

@@ -12,3 +12,43 @@
     color: darkgrey;
     padding-top: 100px;
 }
+.pagi {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background: #9c27b0;
+    color: #ffffff;
+    font-weight: bold;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -2px 3px 4px 3px #888888;
+}
+.pagi:hover{
+    background: #305254;
+    color: #ffffff;
+    transition: .2s;
+    text-decoration: none;
+}
+.search_ic{
+    font-size: 30px;
+    font-weight: bold;
+    padding-right: 5px;
+    vertical-align: middle;
+    color: cadetblue;
+}
+.search_inp{
+    height: 40px;
+    width: 250px;
+    border: 2px solid cadetblue;
+    padding-left: 10px
+}
+.main_active {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background: black;
+    text-decoration: none!important;
+    color: white;
+    font-weight: bold;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    box-shadow: -2px 3px 4px 3px #888888;
+}

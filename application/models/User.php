@@ -2,10 +2,68 @@
 
 namespace application\models;
 
+use application\components\Auth;
 use application\components\Db;
+use application\components\Validator;
 
 class User
 {
+
+    public $first_name;
+    public $last_name;
+    public $email;
+    public $password;
+
+    public function __construct($post)
+    {
+        $this->first_name = $post['first_name'];
+        $this->last_name = $post['last_name'];
+        $this->email = $post['email'];
+        $this->password = $post['password'];
+    }
+
+    public function rules()
+    {
+        return [
+            'required' => [
+                'first_name' => $this->first_name,
+                'last_name' => $this->last_name,
+                'email' => $this->email,
+                'password' => $this->password,
+            ],
+            'name' => [
+                'first_name' => $this->first_name,
+                'last_name' => $this->last_name,
+            ],
+            'email' => [
+                'email' => $this->email,
+            ],
+            'password' => [
+                'password' => $this->password,
+            ]
+        ];
+    }
+
+    public function validate()
+    {
+        $validator = new Validator($this->rules());
+        if (!empty($validator->validate())) {
+            return $validator->validate();
+        }
+        return [];
+    }
+
+
+    public function editUserData($id){
+
+        if ($this->validate() == []){
+            $update = Db::getConnection()->prepare("UPDATE `users` SET `first_name` = '$this->first_name',`last_name` = '$this->last_name', `email` = '$this->email', `password` = '$this->password' WHERE `users`.`id` = '$id';");
+            $update->execute();
+            return true;
+        }
+        return false;
+    }
+
 
     public static function checkName ($login) {
         if (strlen($login) >= 2){
@@ -150,6 +208,23 @@ class User
 
         return $result->fetch();
     }
+
+    public static function getUserId()
+    {
+        $db = Db::getConnection();
+
+        $sql = 'SELECT * FROM users';
+
+        $result = $db->prepare($sql);
+
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
+        $result->execute();
+
+        return $result->fetch();
+    }
+
+
+
 
 
 

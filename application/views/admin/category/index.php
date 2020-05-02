@@ -1,4 +1,6 @@
+<style>
 
+</style>
 <div>
     <div style="display: flex; justify-content: space-between">
         <h2>Categories</h2>
@@ -37,5 +39,13 @@
 
         </tbody>
     </table>
+    <div>
+        <?php
+        $pagination = new \application\components\Pagination('/admin/product/','categories','4','4');
+
+        $pagination->html();
+
+        ?>
+    </div>
 </div>
 
