@@ -30,6 +30,11 @@ return [
         'action' => 'logout',
     ],
 
+    'category/([0-9]+)' => [
+        'controller' => 'category',
+        'action' => 'index',
+    ],
+
     'product' => [
         'controller' => 'product',
         'action' => 'index',
@@ -59,12 +64,35 @@ return [
         'controller' => 'cart',
         'action' => 'order',
     ],
+    'userProfile/shippedOrders' => [
+        'controller' => 'userProfile',
+        'action' => 'shippedOrders',
+    ],
 
 //    admin routes
 
     'admin' => [
         'controller' => 'admin',
         'action' => 'index',
+    ],
+
+    'admin/search' => [
+        'controller' => 'admin',
+        'action' => 'search',
+    ],
+
+    'admin/order/([0-9]+)' => [
+        'controller' => 'adminOrder',
+        'action' => 'index',
+    ],
+    'admin/order' => [
+        'controller' => 'adminOrder',
+        'action' => 'index',
+    ],
+
+    'admin/order/delete/([0-9]+)' => [
+        'controller' => 'adminOrder',
+        'action' => 'delete',
     ],
 
     'admin/category' => [

@@ -34,7 +34,7 @@ if (!Auth::isGuest()) {
                     </ul>
                 <?php endif; ?>
 
-                <input type="submit" name="submit" class="textInput btn-success submit_cl" value="Sign In">
+                <input style="width: 290px;" type="submit" name="submit" class="textInput btn-success submit_cl" value="Sign In">
 
 
                 <b><a style="margin-left: 25px;" href="/account/register">Sign Up ?</a></b>

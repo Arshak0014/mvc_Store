@@ -85,13 +85,44 @@ class Product
         foreach ($productList as $products){
             if ($products['is_new'] == '1'){
                 array_push($recommended,$products);
-                if (count($recommended) >= 3){
+                if (count($recommended) >= 9){
                     break;
                 }
             }
         }
 
         return $recommended;
+    }
+
+    public static function getProducts(){
+
+        $page = Router::getPage();
+
+
+
+
+        $db = Db::getConnection();
+
+        $result = $db->query("SELECT products.*, categories.name AS cat_name FROM products 
+        LEFT JOIN categories ON products.categories_id = categories.id ORDER BY id DESC");
+
+        $i = 0;
+        $productList = array();
+        while ($row = $result->fetch()) {
+            $productList[$i]['id'] = $row['id'];
+            $productList[$i]['name'] = $row['name'];
+            $productList[$i]['categories_id'] = $row['categories_id'];
+            $productList[$i]['description'] = $row['description'];
+            $productList[$i]['price'] = $row['price'];
+            $productList[$i]['image'] = $row['image'];
+            $productList[$i]['is_new'] = $row['is_new'];
+            $productList[$i]['create_date'] = $row['create_date'];
+            $productList[$i]['update_date'] = $row['update_date'];
+            $i++;
+        }
+        return $productList;
+
+
     }
 
     public static function ProductsListForCarousel(){
@@ -157,7 +188,7 @@ class Product
             View::redirect("/product/1");
         }
 
-        $pagination = new Pagination('/product/','products','12','12');
+        $pagination = new Pagination('/product','products','12','12');
 
         $limit = $pagination->limit;
         $res_per_page = $pagination->result_per_page;
@@ -187,25 +218,25 @@ class Product
 
 
     public static function getProductsListAdmin(){
-        $page = Router::getPage();
+//        $page = Router::getPage();
+//
+//        $thisUri = $_SERVER['REQUEST_URI'];
+//
+//        if ($thisUri ==  "/admin/product"){
+//            View::redirect("/admin/product/1");
+//        }
 
-        $thisUri = $_SERVER['REQUEST_URI'];
-
-        if ($thisUri ==  "/admin/product"){
-            View::redirect("/admin/product/1");
-        }
-
-        $pagination = new Pagination('/admin/product/','products','5','5');
-
-        $limit = $pagination->limit;
-        $res_per_page = $pagination->result_per_page;
-
-        $this_page_first_result = ($page - 1) * $res_per_page;
+//        $pagination = new Pagination('/admin/product','products','5','5');
+//
+//        $limit = $pagination->limit;
+//        $res_per_page = $pagination->result_per_page;
+//
+//        $this_page_first_result = ($page - 1) * $res_per_page;
 
         $db = Db::getConnection();
 
         $result = $db->query("SELECT products.*, categories.name AS cat_name FROM products 
-        LEFT JOIN categories ON products.categories_id = categories.id ORDER BY id DESC LIMIT $this_page_first_result,$limit");
+        LEFT JOIN categories ON products.categories_id = categories.id ORDER BY id DESC");
 
         $i = 0;
         $productList = array();
@@ -309,6 +340,7 @@ class Product
         }
     }
 
+
     public static function getCategoriesNameAndId(){
         $db = Db::getConnection();
 
@@ -342,9 +374,6 @@ class Product
         return Product::cartProductCount();
     }
 
-    public static function getIdFromUrl($product,$res){
-
-    }
 
     public static function orderProduct($user_id,$product_id,$count){
 

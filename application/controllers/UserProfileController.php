@@ -18,6 +18,8 @@ class UserProfileController extends Controller
 
 
         if (!empty($_POST) && isset($_POST['submit'])){
+
+
             $model = new User($_POST);
 
             $validate = $model->validate();
@@ -34,6 +36,13 @@ class UserProfileController extends Controller
         $this->view->render('userProfile/index',['',$user]);
 
         return true;
+    }
+
+    public function shippedOrdersAction(){
+
+
+
+        $this->view->render('userProfile/shippedOrders');
     }
 
 }

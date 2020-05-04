@@ -20,7 +20,7 @@ class AdminCategoryController extends AdminBaseController
 
 
 
-        $this->view->setTitle('Admin Category');
+        $this->view->setTitle('Categories');
 
         $this->view->render('admin/category/index',$categoriesList);
 
@@ -44,7 +44,7 @@ class AdminCategoryController extends AdminBaseController
             }
         }
 
-        $this->view->setTitle('Admin Category Create');
+        $this->view->setTitle('Category Create');
         $this->view->render('admin/category/create');
 
         return true;
@@ -71,7 +71,7 @@ class AdminCategoryController extends AdminBaseController
             }
         }
 
-        $this->view->setTitle('Admin Category Update');
+        $this->view->setTitle('Category Update');
         $this->view->render('admin/category/update',['',$categoriesData]);
 
         return true;
@@ -89,7 +89,7 @@ class AdminCategoryController extends AdminBaseController
             header("Location: /admin/category");
         }
 
-        $this->view->setTitle('Admin Category Delete');
+        $this->view->setTitle('Category Delete');
         $this->view->render('admin/category/delete',$categoriesData);
 
         return true;

@@ -19,7 +19,7 @@ class AdminProductController extends AdminBaseController
 
 
 
-        $this->view->setTitle('Admin Products');
+        $this->view->setTitle('Products');
         $this->view->render('admin/product/index',$productsList);
 
         return true;
@@ -48,7 +48,7 @@ class AdminProductController extends AdminBaseController
             }
         }
 
-        $this->view->setTitle('Admin Product Create');
+        $this->view->setTitle('Product Create');
         $this->view->render('admin/product/create',['',$dataCategories]);
 
         return true;
@@ -80,7 +80,7 @@ class AdminProductController extends AdminBaseController
 
 
 
-        $this->view->setTitle('Admin Product Update');
+        $this->view->setTitle('Product Update');
         $this->view->render('admin/product/update',['',$productsData,$dataCategories]);
 
         return true;
@@ -104,7 +104,7 @@ class AdminProductController extends AdminBaseController
         }
 
 
-        $this->view->setTitle('Admin Product Delete');
+        $this->view->setTitle('Product Delete');
         $this->view->render('admin/product/delete',$productsData);
 
         return true;

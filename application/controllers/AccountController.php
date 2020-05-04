@@ -116,17 +116,8 @@ class AccountController extends Controller
         return true;
     }
 
-
-
-    public function cabinetAction()
-    {
-        $this->view->render('account/register');
-    }
-
     public function logoutAction(){
-
         Auth::logout();
-
     }
 
 

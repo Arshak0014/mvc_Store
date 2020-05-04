@@ -18,5 +18,5 @@
     </div>
     <button style="margin-top: 10px" class="btn btn-success" name="submit" type="submit">Update</button>
 
-    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/category/">TABLE</a>
+    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/category">TABLE</a>
 </form>

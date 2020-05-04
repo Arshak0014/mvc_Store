@@ -9,8 +9,7 @@ class Pagination
     public $result_per_page;
     public $path;
     public $tableName;
-    public $total;
-    public $notes_on_page;
+
 
     public function __construct($path,$tableName,$result_per_page,$limit)
     {
@@ -20,12 +19,6 @@ class Pagination
         $this->limit = $limit;
     }
 
-
-
-//    public function countOfPages($total,$notes_on_page)
-//    {
-//        return ceil($this->total / $this->notes_on_page);
-//    }
 
     public function html()
     {
@@ -42,7 +35,6 @@ class Pagination
 
         $page = Router::getPage();
 
-//        $this_page_first_result = ($page - 1) * $this->result_per_page;
 
         if ($page > 1) {
             echo '<a class="pagi" href="'.$this->path.($page - 1).'">⏪</a>';

@@ -5,5 +5,5 @@
 
 <form method="post">
     <input style="font-weight: bold;cursor: pointer" type="submit" name="submit" value="DELETE">
-    <a style="margin-left: 20px;font-weight: bold;cursor: pointer"  href="/admin/category/">CANCEL</a>
+    <a style="margin-left: 20px;font-weight: bold;cursor: pointer"  href="/admin/category">CANCEL</a>
 </form>

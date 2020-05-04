@@ -2,7 +2,7 @@
 <form method="post" enctype="multipart/form-data">
 
     <h2>Update Product</h2>
-    <select style="padding: 8px; width: 260px;" name="category">
+    <select class="create_page_inputs" style="padding: 8px; width: 260px;" name="category">
 <!--        --><?php
 //            foreach ($data[2] as $y){
 //                ?>
@@ -15,20 +15,20 @@
 
     </select><br>
 
-    <input style="padding: 8px; margin-top: 10px" type="text" name="product_name" value="<?=$data[1]['name'] ?>"/><br>
+    <input class="create_page_inputs" style="padding: 8px; margin-top: 10px" type="text" name="product_name" value="<?=$data[1]['name'] ?>"/><br>
 
-    <input class="mt-3 p-2" type="file" name="image" value="<?=$data[1]['image'] ?>"><br>
+    <input class="create_page_inputs" type="file" name="image" value="<?=$data[1]['image'] ?>"><br>
 
-    <select class="mt-3 p-2" name="is_new">
+    <select class="create_page_inputs" name="is_new">
         <option disabled selected value>Is new?</option>
         <option value="1">New</option>
         <option value="0">Old</option>
     </select><br>
 
-    <textarea name="product_description" style="margin-top: 10px;padding: 8px;"
+    <textarea class="create_page_inputs" name="product_description" style="margin-top: 10px;padding: 8px;"
               placeholder="Write escription" cols="30" rows="10"><?=$data[1]['description'] ?></textarea><br>
 
-    <input style="padding: 8px; margin-top: 10px" type="text" name="product_price" value="<?=$data[1]['price'] ?>"/><br>
+    <input class="create_page_inputs" style="padding: 8px; margin-top: 10px" type="text" name="product_price" value="<?=$data[1]['price'] ?>"/><br>
 
     <div>
         <?php if (isset($data[0]) && is_array($data[0])): ?>
@@ -42,5 +42,5 @@
 
     <button style="margin-top: 10px" class="btn btn-success" name="submit" type="submit">Update</button>
 
-    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/product/">TABLE</a>
+    <a style="margin-top: 10px; color: #ffffff" class="btn btn-info" href="/admin/product">TABLE</a>
 </form>

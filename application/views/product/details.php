@@ -16,13 +16,13 @@
                     <div style="font-size: 16px"><?=$data['price'] ?>$</div>
                 </div>
 
-                <div class="section">
+                <div style="background: gainsboro" class="section">
                     <h6 class="titles title-attr" style="margin-top:15px;" ><span>Description</span></h6>
                     <div>
                         <?=$data['description'] ?>
                     </div>
                 </div>
-                <div class="section" style="padding-bottom:5px;">
+                <div style="background: gainsboro;padding-bottom:5px;" class="section">
                     <h6 class="titles title-attr"><span>Status</span></h6>
                     <div>
 
@@ -30,13 +30,13 @@
                         <div class="attr2">OLD</div>
                     </div>
                 </div>
-                <div class="section">
+                <div style="background: gainsboro" class="section">
                     <h6 class="titles title-attr" style="margin-top:15px;" ><span>Adding Time</span></h6>
                     <div>
                         <?=$data['update_date'] ?>
                     </div>
                 </div>
-                <div class="section" style="padding-bottom:20px;">
+                <div style="background: gainsboro;padding-bottom:20px;" class="section" >
                     <h6 class="titles title-attr"><span>Count</span></h6>
                     <div>
                         <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
@@ -45,13 +45,14 @@
                     </div>
                 </div>
 
-                <div class="section" style="padding-bottom:20px;">
+                <div style="background: gainsboro;margin:30px 0;" class="section">
                     <a class="btn btn-success add-to-cart adding_card" data-id="<?=$data['id'] ?>" href="#"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
                 </div>
             </div>
 
             </div>
         </div>
+    <?php include 'application/views/main/carousel.php'?>
     </div>
 </div>
 

@@ -20,8 +20,6 @@ abstract class AdminBase
         }else{
             View::errorCode('404');
         }
-
-
         die();
     }
 

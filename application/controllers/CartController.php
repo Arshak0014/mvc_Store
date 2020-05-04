@@ -3,7 +3,6 @@
 
 namespace application\controllers;
 
-
 use application\base\Controller;
 use application\components\Message;
 use application\components\View;

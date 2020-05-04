@@ -37,6 +37,8 @@ class Auth
 
     public static function logout()
     {
+        setcookie('email','',time()-3600);
+        setcookie('cookie_key','',time()-3600);
         session_unset();
         session_destroy();
         View::redirect('/account/login');

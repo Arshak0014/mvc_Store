@@ -2,6 +2,7 @@
 $products = \application\models\Product::ProductsListForCarousel();
 
 ?>
+<hr>
 <div class="container-fluid">
 
     <section>
@@ -170,6 +171,7 @@ $products = \application\models\Product::ProductsListForCarousel();
     </section>
 
 </div>
+<hr class="pt-5">
 
 <script>
     $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function(){

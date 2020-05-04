@@ -1,5 +1,6 @@
 <?php
 $recProducts = \application\models\Product::recommendedProducts();
+//debug($recProducts);
 ?>
 
 <div style="padding-top: 50px; display: flex; justify-content: space-between; flex-wrap: wrap">

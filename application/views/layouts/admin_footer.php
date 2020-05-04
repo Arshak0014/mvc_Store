@@ -1,26 +1,13 @@
-<footer class="footer">
-    <div class="container-fluid">
-        <nav class="float-left">
-            <ul>
-                <li>
-                    <a href="https://www.creative-tim.com">
-                        Creative Tim
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="copyright float-right">
-            &copy;
-            <script>
-                document.write(new Date().getFullYear())
-            </script>, made with <i class="material-icons">favorite</i> by
-            <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a> for a better web.
+                <footer class="footer">
+                    <div class="container-fluid">
+
+
+                        <!-- your footer here -->
+                    </div>
+                </footer>
+            </div>
         </div>
-        <!-- your footer here -->
-    </div>
-</footer>
-</div>
-</div>
-</body>
+        <script src="../../../assets/js/myCart.js"></script>
+    </body>
 
 </html>

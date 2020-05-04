@@ -8,7 +8,7 @@
     <div style="width: 100%;padding-top: 100px;">
 
         <?php if(\application\components\Message::get_message()): ?>
-            <b style="color: green;font-size: 18px"><?php echo \application\components\Message::get_message(); ?></b>
+            <b style="color: green;font-size: 24px"><?php echo \application\components\Message::get_message(); ?></b>
         <?php endif;?>
 
         <div class=" padding-right">
@@ -20,21 +20,25 @@
                         <tr>
                             <th class="text-center">Image</th>
                             <th class="text-center">Name</th>
-                            <th class="text-center">Price</th>
                             <th class="text-center">Count</th>
+                            <th class="text-center">Price</th>
                             <th class="text-center"></th>
                             <th class="text-center"></th>
                         </tr>
                         <?php foreach ($data[1] as $product): ?>
                             <tr align="center" style="font-size: 16px; font-weight: bold">
-                                <td><img style="width: 100px"  src="../../../images/<?=$product['image'] ?>" alt=""></td>
+                                <td>
+                                    <a href="/product/details/<?php echo $product['id'];?>">
+                                        <img style="width: 100px"  src="../../../images/<?=$product['image'] ?>" alt="">
+                                    </a>
+                                </td>
                                 <td>
                                     <a href="/product/details/<?php echo $product['id'];?>">
                                         <?php echo $product['name'];?>
                                     </a>
                                 </td>
-                                <td><?php echo $product['price'];?> $</td>
                                 <td><?php echo $data[0][$product['id']];?></td>
+                                <td><?php echo $product['price'] * $data[0][$product['id']];?> $</td>
                                 <td>
                                     <a style="color: darkred" href="/cart/delete/<?= $product['id'];?>">
                                         ✘
@@ -50,7 +54,7 @@
 
                     </table>
                     <div style="font-size: 16px" class="my-3">
-                        <b>Total price -- <span style="color: #428bca; "><?= $data[2]?> $</span></b>
+                        <b>Total price -- <span style="color: #428bca; "><?= $data[2] * $data[0][$product['id']]?> $</span></b>
                     </div>
                 <?php else: ?>
                     <p style="#428bca; font-size: 18px">Shopping cart is empty.</p>
@@ -64,3 +68,4 @@
 
 
 </div>
+<?php include 'application/views/main/carousel.php'?>

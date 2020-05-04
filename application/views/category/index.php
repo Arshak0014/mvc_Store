@@ -1,11 +1,15 @@
-<?php //debug($data); ?>
-    <div style="display: flex">
-        <div style="padding-top: 46px;">
-            <?php include 'application/views/layouts/leftSideBar.php'?>
-        </div>
-        <div style="padding-top: 96px; margin-right: 20px; display: flex; justify-content: space-between; flex-wrap: wrap">
+<?php
 
-            <?php foreach ($data as $product):?>
+
+?>
+<div style="display: flex">
+    <div style="padding-top: 46px;">
+        <?php include 'application/views/layouts/leftSideBar.php'?>
+    </div>
+    <div style="padding-top: 96px; margin-right: 20px; display: flex; justify-content: space-between; flex-wrap: wrap">
+
+        <?php foreach ($data as $product):?>
+
 
             <div style="margin-bottom: 20px;margin-right: 5px;" class="card">
                 <a href="/product/details/<?=$product['id']?>">
@@ -15,17 +19,8 @@
                 <p class="price mb-3"><span style="color: darkred">Price</span> <?=$product['price'] ?> $</p>
                 <a class="btn btn-success add-to-cart adding_card" data-id="<?=$product['id'] ?>" href="#"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
             </div>
-            <?php endforeach;?>
+        <?php endforeach;?>
 
-        </div>
     </div>
-    <div align="right" style="margin: 13px 17px 33px 0px;">
-        <?php
-        $pagination = new \application\components\Pagination('/product/','products','12','12');
-
-        $pagination->html();
-
-        ?>
-    </div>
-    <?php include 'application/views/main/carousel.php'?>
-
+</div>
+<?php include 'application/views/main/carousel.php'?>
