@@ -1,5 +1,5 @@
 <?php
-
+//debug($data);
 ?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
@@ -7,16 +7,13 @@
     </div>
     <div style="width: 100%;padding-top: 100px;">
 
-        <?php if(\application\components\Message::get_message()): ?>
-            <b style="color: green;font-size: 24px"><?php echo \application\components\Message::get_message(); ?></b>
-        <?php endif;?>
 
         <div class=" padding-right">
             <div class="features_items">
                 <h2 style="padding-bottom: 30px" class="title">Shopping Cart</h2>
 
                 <?php if ($data[0]): ?>
-                    <table class="table-bordered table-striped table">
+                    <table style="background: white;" class="table-bordered table-striped table">
                         <tr>
                             <th class="text-center">Image</th>
                             <th class="text-center">Name</th>

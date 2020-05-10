@@ -8,6 +8,8 @@
                 <th scope="col">id</th>
                 <th scope="col">User id</th>
                 <th scope="col">Product id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
                 <th scope="col">Count</th>
                 <th scope="col">Order date</th>
                 <th scope="col"></th>
@@ -22,6 +24,8 @@
                                     <td>'.$order["id"].'</td>  
                                     <td>'.$order["user_id"].'</td>  
                                     <td>'.$order["product_id"].'</td>  
+                                    <td>'.$order["name"].'</td>  
+                                    <td>'.$order["price"].'</td>  
                                     <td>'.$order["count"].'</td>  
                                     <td>'.$order["order_date"].'</td>  
                                     <td style="text-align: center;" class="delete"><a href="/admin/order/delete/'.$order["id"].'">✘</a></td>  
@@ -38,7 +42,9 @@
 <script>
 
     $(document).ready(function(){
-        $('#employee_data').DataTable();
+        $('#employee_data').DataTable({
+            "order": [[ 0, 'desc' ]]
+        });
     });
 </script>
 

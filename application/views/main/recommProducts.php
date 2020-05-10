@@ -3,7 +3,7 @@ $recProducts = \application\models\Product::recommendedProducts();
 //debug($recProducts);
 ?>
 
-<div style="padding-top: 50px; display: flex; justify-content: space-between; flex-wrap: wrap">
+<div style=" display: flex; justify-content: space-between; flex-wrap: wrap">
     <?php foreach ($recProducts as $product):?>
 
         <div style="margin-bottom: 20px;margin-right: 5px;" class="card">

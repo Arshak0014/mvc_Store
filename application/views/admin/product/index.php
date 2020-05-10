@@ -45,6 +45,8 @@
 <script>
 
     $(document).ready(function(){
-        $('#employee_data').DataTable();
+        $('#employee_data').DataTable({
+            "order": [[ 0, 'desc' ]]
+        });
     });
 </script>

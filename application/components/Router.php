@@ -12,12 +12,15 @@ class Router
     public function __construct(){
         $arr = require_once 'application/config/routes.php';
 
+
+
         foreach ($arr as $key => $val){
             $this->add($key,$val);
         }
     }
 
     public function add($route, $params) {
+
         $route = '#^'.$route.'$#';
         $this->routes[$route] = $params;
     }

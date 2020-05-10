@@ -52,9 +52,10 @@ if (Auth::isGuest()){
             <!--/col-3-->
             <div class="col-sm-9">
 
-                <ul class="nav nav-tabs" id="myTab">
+                <ul style="font-size: 20px;" class="nav nav-tabs" id="myTab">
 
-                    <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                    <li style=""><a  class="user_prof_tabs" href="#settings" data-toggle="tab">Settings</a></li>
+                    <li><a style="margin: 0;" class="user_prof_tabs" href="/userProfile/shippedOrders">Paid Orders</a></li>
                 </ul>
 
                 <div class="tab-content">

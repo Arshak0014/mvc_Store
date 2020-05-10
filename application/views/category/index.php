@@ -2,11 +2,13 @@
 
 
 ?>
+
 <div style="display: flex">
     <div style="padding-top: 46px;">
         <?php include 'application/views/layouts/leftSideBar.php'?>
     </div>
     <div style="padding-top: 96px; margin-right: 20px; display: flex; justify-content: space-between; flex-wrap: wrap">
+
 
         <?php foreach ($data as $product):?>
 

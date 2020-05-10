@@ -4,7 +4,9 @@
 namespace application\controllers;
 
 use application\base\Controller;
+use application\components\Db;
 use application\components\View;
+use application\models\Product;
 use application\models\User;
 
 class UserProfileController extends Controller
@@ -40,9 +42,11 @@ class UserProfileController extends Controller
 
     public function shippedOrdersAction(){
 
+        $orders = Product::ordersByUserId();
 
 
-        $this->view->render('userProfile/shippedOrders');
+
+        $this->view->render('userProfile/shippedOrders',$orders);
     }
 
 }

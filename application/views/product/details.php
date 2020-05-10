@@ -1,59 +1,68 @@
-<?php //debug($data["id"]);?>
-<div style="padding: 100px 0">
+<?php //debug($data);?>
+<div style="display: flex">
+    <div style="margin-right: 40px; padding-top: 55px">
+        <?php include 'application/views/layouts/leftSideBar.php'?>
+    </div>
+    <div style="padding: 100px 0">
 
-    <div style="margin: 0 auto" class="container">
-        <div style="margin: 0;padding: 0" class="row">
-            <div class="col-xs-4 item-photo mr-5">
-                <img style="max-width:100%;" src="../../../images/<?=$data['image'] ?>" />
-            </div>
-            <div class="col-xs-5" style="border:0px solid gray">
-
-                <h2 style="font-weight: bold;"><?=$data['name'] ?></h2>
-
-
-                <h6 class="titles"><span>Product Price</span></h6>
-                <div>
-                    <div style="font-size: 16px"><?=$data['price'] ?>$</div>
+        <div style="margin: 0 auto" class="container">
+            <div style="margin: 0;padding: 0" class="row">
+                <div style="margin-top: 25px;" class="col-xs-4  mr-5">
+                    <img style="max-width:100%;" src="../../../images/<?=$data['image'] ?>" />
                 </div>
+                <div class="col-xs-5" style="border:0px solid gray">
 
-                <div style="background: gainsboro" class="section">
-                    <h6 class="titles title-attr" style="margin-top:15px;" ><span>Description</span></h6>
+                    <h2 style="font-weight: bold;"><?=$data['name'] ?></h2>
+
+
+                    <h6 class="titles"><span>Product Price</span></h6>
                     <div>
-                        <?=$data['description'] ?>
+                        <div style="font-size: 16px"><?=$data['price'] ?>$</div>
+                    </div>
+
+                    <div style="background: gainsboro" class="section">
+                        <h6 class="titles title-attr" style="margin-top:15px;" ><span>Description</span></h6>
+                        <div>
+                            <?=$data['description'] ?>
+                        </div>
+                    </div>
+                    <div style="background: gainsboro;padding-bottom:5px;" class="section">
+                        <h6 class="titles title-attr"><span>Status</span></h6>
+                        <div>
+                        <?php if ($data['is_new'] == '1'):?>
+                            <div class="status_active">NEW</div>
+                        <?php else: ?>
+                            <div class="status_passive">OLD</div>
+                        <?php endif; ?>
+                        </div>
+                    </div>
+                    <div style="background: gainsboro" class="section">
+                        <h6 class="titles title-attr" style="margin-top:15px;" ><span>Adding Time</span></h6>
+                        <div>
+                            <?=$data['update_date'] ?>
+                        </div>
+                    </div>
+                    <div style="background: gainsboro;padding-bottom:20px;" class="section" >
+                        <h6 class="titles title-attr"><span>Count</span></h6>
+                        <div>
+                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                            <input value="1" />
+                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                        </div>
+                    </div>
+
+                    <div style="background: gainsboro;" class="section">
+                        <a class="btn btn-success add-to-cart adding_card" data-id="<?=$data['id'] ?>" href="#"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
                     </div>
                 </div>
-                <div style="background: gainsboro;padding-bottom:5px;" class="section">
-                    <h6 class="titles title-attr"><span>Status</span></h6>
-                    <div>
-
-                        <div class="attr2">NEW</div>
-                        <div class="attr2">OLD</div>
-                    </div>
-                </div>
-                <div style="background: gainsboro" class="section">
-                    <h6 class="titles title-attr" style="margin-top:15px;" ><span>Adding Time</span></h6>
-                    <div>
-                        <?=$data['update_date'] ?>
-                    </div>
-                </div>
-                <div style="background: gainsboro;padding-bottom:20px;" class="section" >
-                    <h6 class="titles title-attr"><span>Count</span></h6>
-                    <div>
-                        <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                        <input value="1" />
-                        <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
-                    </div>
-                </div>
-
-                <div style="background: gainsboro;margin:30px 0;" class="section">
-                    <a class="btn btn-success add-to-cart adding_card" data-id="<?=$data['id'] ?>" href="#"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
-                </div>
-            </div>
 
             </div>
         </div>
-    <?php include 'application/views/main/carousel.php'?>
+
     </div>
+</div>
+<?php include 'application/views/main/carousel.php'?>
+
 </div>
 
 

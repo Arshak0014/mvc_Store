@@ -21,8 +21,11 @@
 
     <?php include 'application/views/layouts/leftSideBar.php'?>
 
-    <div style="margin-left: 50px">
+    <div style="margin-left: 50px; margin-top: 40px">
+        <h3 style="text-align: left;
+    margin-left: 10px;">Recommended Products</h3>
         <div>
+
             <?php include 'application/views/main/recommProducts.php'?>
         </div>
         <section class="site-section">

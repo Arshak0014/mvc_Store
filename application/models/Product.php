@@ -188,6 +188,7 @@ class Product
             View::redirect("/product/1");
         }
 
+
         $pagination = new Pagination('/product','products','12','12');
 
         $limit = $pagination->limit;
@@ -361,6 +362,8 @@ class Product
         $id = intval($id);
         $productsInCart = array();
 
+
+
         if (isset($_SESSION['products'])) {
             $productsInCart = $_SESSION['products'];
         }
@@ -370,19 +373,47 @@ class Product
             $productsInCart[$id] = 1;
         }
         $_SESSION['products'] = $productsInCart;
+//        var_dump($productsInCart);
+
+//        foreach ($_SESSION['products'] as $key => $val){
+//            var_dump($val);
+//        }
 
         return Product::cartProductCount();
     }
 
 
-    public static function orderProduct($user_id,$product_id,$count){
 
+    public static function orderProduct($user_id,$product_id,$count,$name,$image,$price){
 
-        $create = Db::getConnection()->prepare("INSERT INTO `orders` (`user_id`,`product_id`,`count`,`order_date`) VALUES
-                       ('$user_id','$product_id','$count',now())");
+        $create = Db::getConnection()->prepare("INSERT INTO `orders` (`user_id`,`product_id`,`name`,`image`,`price`,`count`,`order_date`) VALUES
+                       ('$user_id','$product_id','$name','$image','$price','$count',now())");
         $create->execute();
         return true;
 
+    }
+
+    public static function ordersByUserId(){
+        $userId = User::checkLogged();
+
+        $db = Db::getConnection();
+
+        $result = $db->query("SELECT * FROM orders WHERE user_id = '$userId' ORDER BY id DESC");
+
+        $i = 0;
+        $ordersList = array();
+        while ($row = $result->fetch()) {
+            $ordersList[$i]['id'] = $row['id'];
+            $ordersList[$i]['user_id'] = $row['user_id'];
+            $ordersList[$i]['product_id'] = $row['product_id'];
+            $ordersList[$i]['name'] = $row['name'];
+            $ordersList[$i]['image'] = $row['image'];
+            $ordersList[$i]['price'] = $row['price'];
+            $ordersList[$i]['count'] = $row['count'];
+            $ordersList[$i]['order_date'] = $row['order_date'];
+            $i++;
+        }
+        return $ordersList;
     }
 
 }

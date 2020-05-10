@@ -1,4 +1,7 @@
-<?php //debug($data); ?>
+<?php
+//debug($data);
+
+ ?>
     <div style="display: flex">
         <div style="padding-top: 46px;">
             <?php include 'application/views/layouts/leftSideBar.php'?>

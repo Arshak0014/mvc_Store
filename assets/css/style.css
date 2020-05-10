@@ -2154,11 +2154,50 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
   color: white;
 }
 .card_ic{
-  color: crimson;
+  color: darkgoldenrod;
   position: absolute;
   top: 0;
   left: 15px;
-  background: white;
+  background: wheat;
   border-radius: 50%;
   padding: 0px 7px;
+}
+
+.paid_ic {
+  width: 167px;
+  position: absolute;
+  right: -23px;
+  top: -17px;
+}
+.paid_success a{
+  color: green;
+  border: 1px solid green;
+  padding: 10px;
+  font-weight: bold;
+}
+.paid_success a:hover{
+  color: white;
+  background: green;
+
+}
+.user_prof_tabs{
+  background: black;
+  color: white;
+  margin-left: 16px;
+}
+.glyphicon:hover{
+  color: wheat;
+  transition: .2s;
+}
+
+.status_active{
+  border: 1px solid orange;
+  color: white;
+  background: orange;
+  padding: 2px 4px;
+}
+.status_passive{
+  border: 1px solid gray;
+  color: black;
+  padding: 2px 4px;
 }

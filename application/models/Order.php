@@ -16,7 +16,7 @@ class Order
 
 
         $db = Db::getConnection();
-        $sql = "SELECT * FROM orders ORDER BY id DESC";
+        $sql = "SELECT * FROM orders";
         $result = $db->query($sql);
         $result->setFetchMode(\PDO::FETCH_ASSOC);
 
@@ -26,6 +26,9 @@ class Order
             $orders[$i]['id'] = $row['id'];
             $orders[$i]['user_id'] = $row['user_id'];
             $orders[$i]['product_id'] = $row['product_id'];
+            $orders[$i]['name'] = $row['name'];
+            $orders[$i]['image'] = $row['image'];
+            $orders[$i]['price'] = $row['price'];
             $orders[$i]['count'] = $row['count'];
             $orders[$i]['order_date'] = $row['order_date'];
             $i++;
