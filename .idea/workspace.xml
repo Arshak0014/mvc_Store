@@ -21,17 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cart/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/category/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/carousel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/recommProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/recommProducts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/product/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/myCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +123,7 @@
       <workItem from="1588936697668" duration="19764000" />
       <workItem from="1589105953741" duration="15353000" />
       <workItem from="1589193549110" duration="28805000" />
-      <workItem from="1589276659092" duration="4287000" />
+      <workItem from="1589276659092" duration="7422000" />
     </task>
     <servers />
   </component>
@@ -175,10 +167,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="417" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588546665613" />
-    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1589211270006">
+    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1589299178879">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589211270006" />
+    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589299178879" />
     <state x="467" y="179" key="NewPhpClassDialog" timestamp="1588428851242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

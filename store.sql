@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Время создания: Май 02 2020 г., 17:07
+-- Время создания: Май 12 2020 г., 18:38
 -- Версия сервера: 10.4.11-MariaDB
--- Версия PHP: 7.2.29
+-- Версия PHP: 7.2.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -57,6 +57,9 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
+  `name` varchar(250) NOT NULL,
+  `image` varchar(250) NOT NULL,
+  `price` int(11) NOT NULL,
   `count` int(11) NOT NULL,
   `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -65,13 +68,12 @@ CREATE TABLE `orders` (
 -- Дамп данных таблицы `orders`
 --
 
-INSERT INTO `orders` (`id`, `user_id`, `product_id`, `count`, `order_date`) VALUES
-(13, 39, 63, 1, '2020-05-02'),
-(14, 39, 63, 1, '2020-05-02'),
-(17, 1, 78, 1, '2020-05-02'),
-(18, 1, 73, 1, '2020-05-02'),
-(19, 1, 77, 1, '2020-05-02'),
-(23, 39, 72, 1, '2020-05-02');
+INSERT INTO `orders` (`id`, `user_id`, `product_id`, `name`, `image`, `price`, `count`, `order_date`) VALUES
+(24, 1, 79, 'Honor', '30046975b.jpg', 180, 1, '2020-05-12'),
+(25, 1, 81, 'Apple mac', 'chekhol-nakladka-comma-dlya-macbook-air-13-2018-2019-hard-jacket-cover-25175425717122.jpg', 950, 2, '2020-05-12'),
+(26, 39, 64, 'Canon', 'iphone-se-gallery6_GEO_EMEA_FMT_WHH.jpg', 900, 1, '2020-05-12'),
+(27, 39, 73, 'Hicense', 'iphone-se-gallery6_GEO_EMEA_FMT_WHH.jpg', 770, 2, '2020-05-12'),
+(28, 39, 72, 'Lenovo', '1566949680_1501922.jpg', 160, 2, '2020-05-12');
 
 -- --------------------------------------------------------
 
@@ -113,7 +115,8 @@ INSERT INTO `products` (`id`, `name`, `categories_id`, `description`, `price`, `
 (77, 'Iphone 6', 7, 'Lorem Ipsum', 180, '30046975b.jpg', 1, '2020-04-29', '2020-04-29'),
 (78, 'Apple', 4, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 900, 'img_0_83_1158_1.jpg', 1, '2020-04-29', '2020-04-29'),
 (79, 'Honor', 1, 'lorem ipsum lorem ipsum lorem ipsum', 180, '30046975b.jpg', 0, '2020-05-02', '2020-05-02'),
-(80, 'Xiaomi mi 8', 1, 'lorem ipsum lorem ipsum lorem ipsum', 225, 'img_0_83_1158_1.jpg', 1, '2020-05-02', '2020-05-02');
+(80, 'Xiaomi mi 8', 1, 'lorem ipsum lorem ipsum lorem ipsum', 225, 'img_0_83_1158_1.jpg', 1, '2020-05-02', '2020-05-02'),
+(81, 'Apple mac', 24, 'test test test test test test test', 950, 'chekhol-nakladka-comma-dlya-macbook-air-13-2018-2019-hard-jacket-cover-25175425717122.jpg', 1, '2020-05-12', '2020-05-12');
 
 -- --------------------------------------------------------
 
@@ -189,13 +192,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблицы `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT для таблицы `users`

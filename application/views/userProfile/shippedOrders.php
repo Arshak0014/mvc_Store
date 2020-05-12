@@ -1,4 +1,6 @@
-<?php \application\components\Message::set_message('') ?>
+<?php
+
+\application\components\Message::set_message('') ?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
         <?php include 'application/views/layouts/leftSideBar.php'?>

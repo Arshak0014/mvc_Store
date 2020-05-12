@@ -43,12 +43,11 @@
                         </div>
                     </div>
                     <div style="background: gainsboro;padding-bottom:20px;" class="section" >
-                        <h6 class="titles title-attr"><span>Count</span></h6>
                         <div>
 <!--                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>-->
                             <?php foreach ($_SESSION['products'] as $key => $val):?>
                             <?php if ($key == $data['id']):?>
-                            <div><?= $val ?></div>
+                            <div><h6 class="titles title-attr"><span>Count</span></h6><?= $val ?></div>
 
 <!--                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>-->
                             <?php endif; ?>
