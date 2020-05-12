@@ -43,7 +43,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[0]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[0]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[0]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[0]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[6]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[6]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[6]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[6]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -81,7 +81,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[1]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[1]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[1]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[1]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[2]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[2]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[2]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[2]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -119,7 +119,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[3]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[3]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[3]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[3]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -138,7 +138,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[4]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[4]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[4]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[4]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>
@@ -157,7 +157,7 @@ $products = \application\models\Product::ProductsListForCarousel();
                             </div>
                             <div class="card-body p-1">
                                 <h5 style="color: black" class="mb-1 card-title font-weight-bold fuchsia-rose-text mb-0"><?=$products[5]['name'] ?></h5>
-                                <p class="mb-3 chili-pepper-text mb-0"><b>Price </b><?=$products[5]['price'] ?> $</p>
+                                <p class="mb-3 mb-0"><b>Price </b><?=$products[5]['price'] ?> $</p>
                                 <p ><a style="color: white; background: #5cb85c; padding: 10px 30px;" class="" href="/product/details/<?= $products[5]['id']; ?>">Add to Cart</a></p>
                             </div>
                         </div>

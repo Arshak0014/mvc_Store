@@ -12,8 +12,8 @@ class ProductController extends Controller
 
     public function indexAction(){
 
-
         $products = Product::ProductsList();
+
 //        $result = [];
 //        $id = [];
 //        foreach ($products as $i){
@@ -34,7 +34,7 @@ class ProductController extends Controller
 //                }
 //            }
 //        }
-//        var_dump($result[0]);
+//        var_dump($result);
 
 
         $this->view->setTitle('Product');

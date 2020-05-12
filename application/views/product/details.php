@@ -1,4 +1,4 @@
-<?php //debug($data);?>
+<?php //debug($_SESSION['products']); ?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
         <?php include 'application/views/layouts/leftSideBar.php'?>
@@ -45,9 +45,15 @@
                     <div style="background: gainsboro;padding-bottom:20px;" class="section" >
                         <h6 class="titles title-attr"><span>Count</span></h6>
                         <div>
-                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                            <input value="1" />
-                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+<!--                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>-->
+                            <?php foreach ($_SESSION['products'] as $key => $val):?>
+                            <?php if ($key == $data['id']):?>
+                            <div><?= $val ?></div>
+
+<!--                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>-->
+                            <?php endif; ?>
+
+                            <?php endforeach;?>
                         </div>
                     </div>
 

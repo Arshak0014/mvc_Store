@@ -21,43 +21,17 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/CartController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/UserProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UserProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/category/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/order/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/order/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/product/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/product/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/cart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cart/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cart/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cart/order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/category/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/carousel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/main/recommProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/recommProducts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/userProfile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/userProfile/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/myCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/apple-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/bg2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/city-profile.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/city.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/cover.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/faces/avatar.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/faces/card-profile1-square.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/faces/card-profile2-square.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/faces/marc.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/mask.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/new_logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/sidebar-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/sidebar-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/sidebar-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets_admin/img/sidebar-4.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,6 +129,9 @@
       <workItem from="1588857712722" duration="18930000" />
       <workItem from="1588936015474" duration="10000" />
       <workItem from="1588936697668" duration="19764000" />
+      <workItem from="1589105953741" duration="15353000" />
+      <workItem from="1589193549110" duration="28805000" />
+      <workItem from="1589276659092" duration="4287000" />
     </task>
     <servers />
   </component>
@@ -171,16 +148,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="279" y="23" key="#Notifications" timestamp="1587451305954">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="279" y="23" key="#Notifications/0.0.1366.728@0.0.1366.728" timestamp="1587451305954" />
-    <state x="142" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587820963623">
+    <state x="142" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589194975885">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="142" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1587820963623" />
+    <state x="142" y="20" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589194975885" />
     <state x="492" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1587887398281">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -197,10 +175,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="417" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588546665613" />
-    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1588800413856">
+    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1589211270006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588800413856" />
+    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589211270006" />
     <state x="467" y="179" key="NewPhpClassDialog" timestamp="1588428851242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -213,25 +191,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="188" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587550882775" />
-    <state x="38" y="625" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1588975404468">
+    <state x="112" y="118" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589277495245">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="38" y="625" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1588975404468" />
+    <state x="112" y="118" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1589277495245" />
     <state x="343" y="146" key="com.intellij.ide.util.TipDialog" timestamp="1588936017479">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="343" y="146" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1588936017479" />
-    <state x="380" y="0" width="678" height="728" key="find.popup" timestamp="1588944561852">
+    <state x="380" y="0" width="678" height="728" key="find.popup" timestamp="1589117175249">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="380" y="0" width="678" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1588944561852" />
+    <state x="380" y="0" width="678" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1589117175249" />
     <state x="343" y="158" key="run.anything.popup" timestamp="1588968174142">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="343" y="158" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1588968174142" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1588371399295">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1589120053335">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1588371399295" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1589120053335" />
   </component>
 </project>

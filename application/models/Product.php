@@ -362,16 +362,18 @@ class Product
         $id = intval($id);
         $productsInCart = array();
 
-
-
         if (isset($_SESSION['products'])) {
             $productsInCart = $_SESSION['products'];
+
         }
         if (array_key_exists($id, $productsInCart)) {
             $productsInCart[$id]++;
         } else {
             $productsInCart[$id] = 1;
         }
+        echo '<script>alert("Added in cart.")
+                window.location.reload();
+            </script>';
         $_SESSION['products'] = $productsInCart;
 //        var_dump($productsInCart);
 
@@ -415,5 +417,18 @@ class Product
         }
         return $ordersList;
     }
+
+    public static function concidenceProductsSess($id){
+        $result = [];
+        if (!empty($_SESSION['products'])){
+            foreach ($_SESSION['products'] as $key => $val){
+                if ($key == $id){
+                    array_push($result,$val);
+                }
+            }
+        }
+        return $result;
+    }
+
 
 }

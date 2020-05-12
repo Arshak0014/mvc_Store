@@ -37,6 +37,11 @@ class CartController extends Controller
         return true;
     }
 
+    public function countAction($id){
+        var_dump($_POST);
+        return true;
+    }
+
     public function deleteAction($id){
 
         Product::deleteFromCart($id);

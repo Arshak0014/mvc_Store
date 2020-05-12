@@ -34,8 +34,17 @@
                                         <?php echo $product['name'];?>
                                     </a>
                                 </td>
-                                <td><?php echo $data[0][$product['id']];?></td>
-                                <td><?php echo $product['price'] * $data[0][$product['id']];?> $</td>
+                                <td>
+
+                                    <?=$data[0][$product['id']];?>
+
+                                </td>
+                                <td>
+                                    <?php echo $product['price'].'$' .' x '. $data[0][$product['id']] .'<br>
+                                    <b style="color: darkred">
+                                        '. $product['price']*$data[0][$product['id']];?>$
+                                    <b>
+                                </td>
                                 <td>
                                     <a style="color: darkred" href="/cart/delete/<?= $product['id'];?>">
                                         ✘
@@ -65,4 +74,12 @@
 
 
 </div>
+<script>
+
+
+
+// document.getElementById('plus').onclick = function () {
+
+// }
+</script>
 <?php include 'application/views/main/carousel.php'?>

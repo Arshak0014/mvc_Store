@@ -2029,6 +2029,7 @@ h3{
 .price {
   color: grey;
   font-size: 22px;
+  margin: 0;
 }
 
 .card button {
@@ -2200,4 +2201,13 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
   border: 1px solid gray;
   color: black;
   padding: 2px 4px;
+}
+.addTo{
+  color: white;
+  padding: 0 4px;
+  margin-left: 5px;
+  border-radius: 2px;
+}
+.addTo:hover{
+  background: black;
 }
