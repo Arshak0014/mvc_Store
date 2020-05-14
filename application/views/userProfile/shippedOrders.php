@@ -1,5 +1,4 @@
 <?php
-
 \application\components\Message::set_message('') ?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
@@ -20,7 +19,8 @@
                             <th class="text-center">Name</th>
                             <th class="text-center">Count</th>
                             <th class="text-center">Price</th>
-                            <th class="text-center"></th>
+                            <th class="text-center">General</th>
+                            <th class="text-center">Status</th>
                         </tr>
                         <?php foreach ($data as $product): ?>
                         <tr align="center" style="font-size: 16px; font-weight: bold;background: darkslategrey; color: white">
@@ -39,6 +39,13 @@
                             <td><?php echo $product['price'] * $product['count'];?> $
                                 <div style="position: relative">
                                     <img class="paid_ic" src="../../../images/paid-rectangle-stamp-1.png" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <div style="position: relative">
+                                <?php echo $product['status'] == '1'
+                                    ? '<img class="process" src="../../../images/processing-png-1.png" alt="Processing">'
+                                    : '<img class="process" src="../../../images/confirm-icon-png-2.png" alt="Confirm">';?>
                                 </div>
                             </td>
 

@@ -388,8 +388,8 @@ class Product
 
     public static function orderProduct($user_id,$product_id,$count,$name,$image,$price){
 
-        $create = Db::getConnection()->prepare("INSERT INTO `orders` (`user_id`,`product_id`,`name`,`image`,`price`,`count`,`order_date`) VALUES
-                       ('$user_id','$product_id','$name','$image','$price','$count',now())");
+        $create = Db::getConnection()->prepare("INSERT INTO `orders` (`user_id`,`product_id`,`name`,`image`,`price`,`count`,`order_date`,`status`) VALUES
+                       ('$user_id','$product_id','$name','$image','$price','$count',now(),'1')");
         $create->execute();
         return true;
 
@@ -413,6 +413,7 @@ class Product
             $ordersList[$i]['price'] = $row['price'];
             $ordersList[$i]['count'] = $row['count'];
             $ordersList[$i]['order_date'] = $row['order_date'];
+            $ordersList[$i]['status'] = $row['status'];
             $i++;
         }
         return $ordersList;

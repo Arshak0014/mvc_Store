@@ -21,9 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AdminOrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminOrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/order/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/order/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/userProfile/shippedOrders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,23 +51,23 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mainShopAjax" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\mvcTraining\images" />
-      <recent name="C:\xampp\htdocs\mvcTraining\assets\mainjs" />
-      <recent name="C:\xampp\htdocs\mvcTraining" />
-      <recent name="C:\xampp\htdocs\mvcTraining\application\components" />
-      <recent name="C:\xampp\htdocs\mvcTraining\application\models" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\mvcTraining" />
       <recent name="C:\xampp\htdocs\mvcTraining\application\views\admin\order" />
       <recent name="C:\xampp\htdocs\mvcTraining\application\views\admin\dashboard" />
       <recent name="C:\xampp\htdocs\mvcTraining\application\views" />
       <recent name="C:\xampp\htdocs\mvcTraining\application\views\product\contact" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\mvcTraining\images" />
+      <recent name="C:\xampp\htdocs\mvcTraining\assets\mainjs" />
+      <recent name="C:\xampp\htdocs\mvcTraining" />
+      <recent name="C:\xampp\htdocs\mvcTraining\application\components" />
+      <recent name="C:\xampp\htdocs\mvcTraining\application\models" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -123,7 +128,9 @@
       <workItem from="1588936697668" duration="19764000" />
       <workItem from="1589105953741" duration="15353000" />
       <workItem from="1589193549110" duration="28805000" />
-      <workItem from="1589276659092" duration="7422000" />
+      <workItem from="1589276659092" duration="10664000" />
+      <workItem from="1589360735134" duration="12076000" />
+      <workItem from="1589448387770" duration="496000" />
     </task>
     <servers />
   </component>
@@ -159,18 +166,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="302" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1588337602293" />
-    <state x="417" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588031924768">
+    <state x="417" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1589377669814">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="417" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588031924768" />
+    <state x="417" y="112" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1589377669814" />
     <state x="417" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1588546665613">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="417" y="120" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1588546665613" />
-    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1589299178879">
+    <state x="467" y="120" key="FileChooserDialogImpl" timestamp="1589448775040">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589299178879" />
+    <state x="467" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1589448775040" />
     <state x="467" y="179" key="NewPhpClassDialog" timestamp="1588428851242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

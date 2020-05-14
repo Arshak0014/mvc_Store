@@ -40,5 +40,19 @@ class AdminOrderController extends AdminBaseController
 
         return true;
     }
+    public function updateStatusAction($id){
+        AdminBase::checkAdmin();
+        $ordersData = Order::getOrderById($id);
+
+        if (isset($_POST['submit'])) {
+
+            Order::updateStatusById($id);
+            View::redirect('/admin/order');
+        }
+        $this->view->setTitle('Order Update Status');
+        $this->view->render('admin/order/updateStatus',$ordersData);
+
+        return true;
+    }
 
 }

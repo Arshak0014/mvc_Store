@@ -95,6 +95,11 @@ return [
         'action' => 'delete',
     ],
 
+    'admin/order/updateStatus/([0-9]+)' => [
+        'controller' => 'adminOrder',
+        'action' => 'updateStatus',
+    ],
+
     'admin/category' => [
         'controller' => 'adminCategory',
         'action' => 'index',

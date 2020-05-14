@@ -2165,10 +2165,10 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
 }
 
 .paid_ic {
-  width: 167px;
+  width: 120px;
   position: absolute;
-  right: -23px;
-  top: -17px;
+  right: -5px;
+  top: -5px;
 }
 .paid_success a{
   color: green;
@@ -2210,4 +2210,10 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
 }
 .addTo:hover{
   background: black;
+}
+.process{
+  width: 50px;
+  position: absolute;
+  top: 26px;
+  right: 21px;
 }

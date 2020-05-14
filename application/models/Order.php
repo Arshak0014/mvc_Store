@@ -31,6 +31,7 @@ class Order
             $orders[$i]['price'] = $row['price'];
             $orders[$i]['count'] = $row['count'];
             $orders[$i]['order_date'] = $row['order_date'];
+            $orders[$i]['status'] = $row['status'];
             $i++;
         }
         return $orders;
@@ -39,8 +40,16 @@ class Order
     public static function deleteOrderById($id)
     {
         $db = Db::getConnection();
-
         $sql = 'DELETE FROM orders WHERE id = :id';
+
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, \PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    public static function updateStatusById($id){
+        $db = Db::getConnection();
+        $sql = "UPDATE `orders` SET `status` = '2' WHERE `orders`.`id` = :id";
 
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, \PDO::PARAM_INT);
