@@ -33,19 +33,63 @@ class CartController extends Controller
 
 
     public function addAction($id){
-        echo Product::addProductToCard($id);
+
+        if (isset($_POST['product_id'])){
+            $order_table = '';
+
+            if ($_POST['action'] == 'add'){
+                if (isset($_SESSION['shopping_cart'])){
+                    $is_available = 0;
+                    foreach ($_SESSION['shopping_cart'] as $key => $value){
+                        if ($_SESSION['shopping_cart'][$key]['product_id'] == $_POST['product_id']){
+                            $is_available++;
+                            $_SESSION['shopping_cart'][$key]['product_quantity']
+                                = $_SESSION['shopping_cart'][$key]['product_quantity'] + $_POST['product_quantity'];
+                        }
+                    }
+                    if ($is_available < 1){
+                        $item_array = array(
+                            'product_id' => $_POST['product_id'],
+                            'product_image' => $_POST['product_image'],
+                            'product_name' => $_POST['product_name'],
+                            'product_price' => $_POST['product_price'],
+                            'product_quantity' => $_POST['product_quantity']
+                        );
+                        $_SESSION['shopping_cart'][] = $item_array;
+                    }
+                }
+                else{
+                    $item_array = array(
+                        'product_id' => $_POST['product_id'],
+                        'product_image' => $_POST['product_image'],
+                        'product_name' => $_POST['product_name'],
+                        'product_price' => $_POST['product_price'],
+                        'product_quantity' => $_POST['product_quantity']
+                    );
+                    $_SESSION['shopping_cart'][] = $item_array;
+                }
+
+                $output = array(
+                    'order_table' => $order_table,
+                    'cart_item' => count($_SESSION['shopping_cart'])
+
+                );
+                echo json_encode($output);
+
+
+            }
+        }
         return true;
     }
 
     public function countAction($id){
-        var_dump($_POST);
+//        var_dump($_POST);
         return true;
     }
 
     public function deleteAction($id){
 
         Product::deleteFromCart($id);
-
         View::redirect('/cart');
     }
 
@@ -56,27 +100,36 @@ class CartController extends Controller
 
         $product = Product::getProductFromSess();
 
-        $productId = array_keys($product);
+
+
+        $productId = array();
+
+        foreach ($product as $key => $value){
+            if ($value['product_id'] == $id){
+                array_push($productId,$value);
+            }
+        }
+
         $url = trim($_SERVER['REQUEST_URI'],'/');
 
         $arrUrl = explode('/', $url);
 
+        foreach ($_SESSION['shopping_cart'] as $key => $value){
 
-        foreach ($productId as $i){
-            if ($i == $arrUrl[2]){
-                $result .= $i;
+            if ($arrUrl[2] == $value['product_id']){
+                $result .= $value['product_id'];
             }
         }
 
-        $productData = Product::getProductById($result);
 
         if ($userId){
             if (isset($_POST['submitShipConfirm'])){
-                Product::orderProduct($user['id'],$result,$product[$id],$productData['name'],$productData['image'],$productData['price']);
-                foreach ($_SESSION['products'] as $key => $val){
-                    if ($key == $result){
-                        unset($_SESSION['products'][$key]);
+                Product::orderProduct($user['id'],$productId[0]['product_id'],$productId[0]['product_quantity'],$productId[0]['product_name'],$productId[0]['product_image'],$productId[0]['product_price']);
+                foreach ($_SESSION['shopping_cart'] as $key => $value){
+                    if ($result == $value['product_id']){
+                        unset($_SESSION['shopping_cart'][$key]);
                     }
+
                 }
                 Message::set_message('Your order is confirmed :)');
             }
@@ -85,6 +138,6 @@ class CartController extends Controller
             View::redirect('/account/login');
         }
 
-        $this->view->render('cart/order',[$productData,$product[$id]]);
+        $this->view->render('cart/order',$productId);
     }
 }

@@ -73,7 +73,8 @@
                             <li>
                                 <a style="color: darkgoldenrod; font-weight: bold;position: relative;" href="/cart">
                                     <span style="margin-right:3px;font-size: 20px;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                    <span class="card_ic" style="" id="cart-count"><?=\application\models\Product::cartProductCount(); ?></span>
+                                    <span class="badge"> <?php if (isset($_SESSION['shopping_cart'])){echo count($_SESSION['shopping_cart']); } else {echo '0';} ?> </span>
+<!--                                    <span class="card_ic" style="" id="cart-count">--><?//=\application\models\Product::cartProductCount(); ?><!--</span>-->
                                 </a>
                             </li>
                     </ul>

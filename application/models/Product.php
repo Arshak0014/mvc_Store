@@ -173,8 +173,13 @@ class Product
     public static function deleteFromCart($id){
 
         $cardProducts = Product::getProductFromSess();
-        unset($cardProducts[$id]);
-        $_SESSION['products'] = $cardProducts;
+
+
+        foreach ($cardProducts as $key => $value){
+            if ($value['product_id'] == $id){
+                unset($_SESSION['shopping_cart'][$key]);
+            }
+        }
 
     }
 
@@ -322,8 +327,8 @@ class Product
     }
 
     public static function getProductFromSess(){
-        if (isset($_SESSION['products'])){
-            return $_SESSION['products'];
+        if (isset($_SESSION['shopping_cart'])){
+            return $_SESSION['shopping_cart'];
         }
         return false;
     }
@@ -364,16 +369,16 @@ class Product
 
         if (isset($_SESSION['products'])) {
             $productsInCart = $_SESSION['products'];
-
+            echo '<script>alert("Added in cart.")
+                window.location.reload();
+            </script>';
         }
         if (array_key_exists($id, $productsInCart)) {
-            $productsInCart[$id]++;
+
         } else {
             $productsInCart[$id] = 1;
         }
-        echo '<script>alert("Added in cart.")
-                window.location.reload();
-            </script>';
+
         $_SESSION['products'] = $productsInCart;
 //        var_dump($productsInCart);
 

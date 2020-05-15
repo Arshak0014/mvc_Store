@@ -1,5 +1,5 @@
 <?php
-//debug($data);
+//debug($_SESSION['shopping_cart']);
 ?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
@@ -12,7 +12,9 @@
             <div class="features_items">
                 <h2 style="padding-bottom: 30px" class="title">Shopping Cart</h2>
 
-                <?php if ($data[0]): ?>
+                <?php
+                $total = 0;
+                if (!empty($_SESSION['shopping_cart'])): ?>
                     <table style="background: white;" class="table-bordered table-striped table">
                         <tr>
                             <th class="text-center">Image</th>
@@ -22,45 +24,47 @@
                             <th class="text-center"></th>
                             <th class="text-center"></th>
                         </tr>
-                        <?php foreach ($data[1] as $product): ?>
+                        <?php foreach ($_SESSION['shopping_cart'] as $key => $value): ?>
                             <tr align="center" style="font-size: 16px; font-weight: bold">
                                 <td>
-                                    <a href="/product/details/<?php echo $product['id'];?>">
-                                        <img style="width: 100px"  src="../../../images/<?=$product['image'] ?>" alt="">
+                                    <a href="/product/details/<?php echo $value['product_id'];?>">
+                                        <img style="width: 100px"  src="../../../images/<?=$value['product_image'] ?>" alt="">
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/product/details/<?php echo $product['id'];?>">
-                                        <?php echo $product['name'];?>
+                                    <a href="/product/details/<?php echo $value['product_id'];?>">
+                                        <?php echo $value['product_name'];?>
                                     </a>
                                 </td>
                                 <td>
 
-                                    <?=$data[0][$product['id']];?>
+                                    <?=$value['product_quantity'];?>
 
                                 </td>
                                 <td>
-                                    <?php echo $product['price'].'$' .' x '. $data[0][$product['id']] .'<br>
+                                    <?php echo $value['product_price'].'$' .' x '. $value['product_quantity'] .'<br>
                                     <b style="color: darkred">
-                                        '. $product['price']*$data[0][$product['id']];?>$
+                                        '. $value['product_price']*$value['product_quantity'];?>$
                                     <b>
                                 </td>
                                 <td>
-                                    <a style="color: darkred" href="/cart/delete/<?= $product['id'];?>">
+                                    <a style="color: darkred" href="/cart/delete/<?= $value['product_id'];?>">
                                         ✘
                                     </a>
                                 </td>
                                 <td>
-                                    <a style="background: green;color: white; padding: 5px" href="/cart/order/<?= $product['id'];?>">
+                                    <a style="background: green;color: white; padding: 5px" href="/cart/order/<?= $value['product_id'];?>">
                                         BUY
                                     </a>
                                 </td>
                             </tr>
+                            <?php $total = $total + ($value['product_quantity'] * $value['product_price']);
+                            ?>
                         <?php endforeach; ?>
 
                     </table>
                     <div style="font-size: 16px" class="my-3">
-                        <b>Total price -- <span style="color: #428bca; "><?= $data[2] * $data[0][$product['id']]?> $</span></b>
+                        <b>Total price -- <span style="color: #428bca; "><?= $total; ?> $</span></b>
                     </div>
                 <?php else: ?>
                     <p style="#428bca; font-size: 18px">Shopping cart is empty.</p>
