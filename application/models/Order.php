@@ -5,9 +5,7 @@ namespace application\models;
 
 
 use application\components\Db;
-use application\components\Pagination;
-use application\components\Router;
-use application\components\View;
+
 
 class Order
 {

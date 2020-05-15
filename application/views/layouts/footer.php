@@ -10,10 +10,10 @@
                     <div class="col-md-3 ml-auto">
                         <h2 class="footer-heading mb-4">Features</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="/">Home Page</a></li>
+                            <li><a href="/product">Products</a></li>
+                            <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
                         </ul>
                     </div>
                     <div class="col-md-3">

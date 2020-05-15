@@ -71,10 +71,10 @@
                                 </li>
                             <?php endif; ?>
                             <li>
-                                <a style="color: darkgoldenrod; font-weight: bold;position: relative;" href="/cart">
-                                    <span style="margin-right:3px;font-size: 20px;" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                    <span class="badge"> <?php if (isset($_SESSION['shopping_cart'])){echo count($_SESSION['shopping_cart']); } else {echo '0';} ?> </span>
-<!--                                    <span class="card_ic" style="" id="cart-count">--><?//=\application\models\Product::cartProductCount(); ?><!--</span>-->
+                                <a style="color: darkorange; font-weight: bold;position: relative;" href="/cart">
+                                    <span style="margin-right:3px;font-size: 20px;" class="cart_main  glyphicon-shopping-cart" aria-hidden="true"></span>
+                                    <span style="background: wheat;color: #343a40;font-weight: bold;" class="badge">
+                                         <?= isset($_SESSION['shopping_cart']) ? count($_SESSION['shopping_cart']) : '0' ?></span>
                                 </a>
                             </li>
                     </ul>
@@ -89,7 +89,7 @@
             <div class="row align-items-center">
 
                 <div class="col-11 col-xl-2">
-                    <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">Create<span class="text-primary">.</span> </a></h1>
+                    <h1 class="mb-0 site-logo"><a href="/" class="text-black h2 mb-0">Electronics<span class="text-primary">.</span> </a></h1>
                 </div>
                 <div class="col-12 col-md-10 d-none d-xl-block">
                     <nav class="site-navigation position-relative text-right" role="navigation">

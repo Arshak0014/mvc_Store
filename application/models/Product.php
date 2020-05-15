@@ -170,6 +170,52 @@ class Product
         return $products;
     }
 
+    public static function addProductToCart(){
+        if (isset($_POST['product_id'])){
+            $order_table = '';
+
+            if ($_POST['action'] == 'add'){
+                if (isset($_SESSION['shopping_cart'])){
+                    $is_available = 0;
+                    foreach ($_SESSION['shopping_cart'] as $key => $value){
+                        if ($_SESSION['shopping_cart'][$key]['product_id'] == $_POST['product_id']){
+                            $is_available++;
+                            $_SESSION['shopping_cart'][$key]['product_quantity']
+                                = $_SESSION['shopping_cart'][$key]['product_quantity'] + $_POST['product_quantity'];
+                        }
+                    }
+                    if ($is_available < 1){
+                        $item_array = array(
+                            'product_id' => $_POST['product_id'],
+                            'product_image' => $_POST['product_image'],
+                            'product_name' => $_POST['product_name'],
+                            'product_price' => $_POST['product_price'],
+                            'product_quantity' => $_POST['product_quantity']
+                        );
+                        $_SESSION['shopping_cart'][] = $item_array;
+                    }
+                }
+                else{
+                    $item_array = array(
+                        'product_id' => $_POST['product_id'],
+                        'product_image' => $_POST['product_image'],
+                        'product_name' => $_POST['product_name'],
+                        'product_price' => $_POST['product_price'],
+                        'product_quantity' => $_POST['product_quantity']
+                    );
+                    $_SESSION['shopping_cart'][] = $item_array;
+                }
+
+                $output = array(
+                    'order_table' => $order_table,
+                    'cart_item' => count($_SESSION['shopping_cart'])
+                );
+                echo json_encode($output);
+            }
+        }
+        return true;
+    }
+
     public static function deleteFromCart($id){
 
         $cardProducts = Product::getProductFromSess();
@@ -224,20 +270,6 @@ class Product
 
 
     public static function getProductsListAdmin(){
-//        $page = Router::getPage();
-//
-//        $thisUri = $_SERVER['REQUEST_URI'];
-//
-//        if ($thisUri ==  "/admin/product"){
-//            View::redirect("/admin/product/1");
-//        }
-
-//        $pagination = new Pagination('/admin/product','products','5','5');
-//
-//        $limit = $pagination->limit;
-//        $res_per_page = $pagination->result_per_page;
-//
-//        $this_page_first_result = ($page - 1) * $res_per_page;
 
         $db = Db::getConnection();
 
@@ -333,18 +365,18 @@ class Product
         return false;
     }
 
-    public static function cartProductCount()
-    {
-        if (isset($_SESSION['products'])) {
-            $count = 0;
-            foreach ($_SESSION['products'] as $id => $quantity) {
-                $count = $count + $quantity;
-            }
-            return $count;
-        } else {
-            return 0;
-        }
-    }
+//    public static function cartProductCount()
+//    {
+//        if (isset($_SESSION['products'])) {
+//            $count = 0;
+//            foreach ($_SESSION['products'] as $id => $quantity) {
+//                $count = $count + $quantity;
+//            }
+//            return $count;
+//        } else {
+//            return 0;
+//        }
+//    }
 
 
     public static function getCategoriesNameAndId(){
@@ -362,32 +394,23 @@ class Product
         return $categoryList;
     }
 
-    public static function addProductToCard($id)
-    {
-        $id = intval($id);
-        $productsInCart = array();
-
-        if (isset($_SESSION['products'])) {
-            $productsInCart = $_SESSION['products'];
-            echo '<script>alert("Added in cart.")
-                window.location.reload();
-            </script>';
-        }
-        if (array_key_exists($id, $productsInCart)) {
-
-        } else {
-            $productsInCart[$id] = 1;
-        }
-
-        $_SESSION['products'] = $productsInCart;
-//        var_dump($productsInCart);
-
-//        foreach ($_SESSION['products'] as $key => $val){
-//            var_dump($val);
+//    public static function addProductToCard($id)
+//    {
+//        $id = intval($id);
+//        $productsInCart = array();
+//        if (isset($_SESSION['products'])) {
+//            $productsInCart = $_SESSION['products'];
+//            echo '<script>alert("Added in cart.")
+//                window.location.reload();
+//            </script>';
 //        }
-
-        return Product::cartProductCount();
-    }
+//        if (array_key_exists($id, $productsInCart)) {
+//        } else {
+//            $productsInCart[$id] = 1;
+//        }
+//        $_SESSION['products'] = $productsInCart;
+//        return Product::cartProductCount();
+//    }
 
 
 
@@ -422,18 +445,6 @@ class Product
             $i++;
         }
         return $ordersList;
-    }
-
-    public static function concidenceProductsSess($id){
-        $result = [];
-        if (!empty($_SESSION['products'])){
-            foreach ($_SESSION['products'] as $key => $val){
-                if ($key == $id){
-                    array_push($result,$val);
-                }
-            }
-        }
-        return $result;
     }
 
 

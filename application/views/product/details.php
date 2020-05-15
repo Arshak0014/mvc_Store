@@ -1,4 +1,4 @@
-<?php //debug($_SESSION['products']); ?>
+<?php //debug($data); ?>
 <div style="display: flex;overflow: hidden;">
     <div style="margin-right: 40px; padding-top: 55px">
         <?php include 'application/views/layouts/leftSideBar.php'?>
@@ -13,7 +13,6 @@
                 <div class="col-xs-5" style="border:0px solid gray">
 
                     <h2 style="font-weight: bold;"><?=$data['name'] ?></h2>
-
 
                     <h6 class="titles"><span>Product Price</span></h6>
                     <div>
@@ -42,28 +41,18 @@
                             <?=$data['update_date'] ?>
                         </div>
                     </div>
-                    <div style="background: gainsboro;padding-bottom:20px;" class="section" >
-                        <div>
-<!--                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>-->
-                            <?php if (!empty($_SESSION['products'])): ?>
-                            <?php foreach ($_SESSION['products'] as $key => $val):?>
-
-                            <?php if ($key == $data['id']):?>
-
-                            <div><h6 class="titles title-attr"><span>Count</span></h6><?= $val ?></div>
-<!--                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>-->
-                            <?php else: ?>
-                            <?php endif; ?>
-                            <?php endforeach;?>
-                            <?php endif; ?>
+                    <div class="mt-4 mb-4">
+                        <h6 class="titles title-attr" style="margin-top:15px;" ><span>Count</span></h6>
+                        <div  style="display: flex;">
+                            <b class="mr-2">QTY</b>
+                            <input type="text" name="quantity" id="quantity<?=$data['id'];?>" class="quantity_input" value="1">
                         </div>
                     </div>
-
-                    <div style="background: gainsboro;" class="section">
-                        <a class="btn btn-success add-to-cart adding_card" data-id="<?=$data['id'] ?>" href="#"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</a>
-                    </div>
+                    <input type="hidden" name="hidden_image" id="image<?=$data['id'];?>" value="<?=$data['image'] ?>">
+                    <input type="hidden" name="hidden_name" id="name<?=$data['id'];?>" value="<?=$data['name'] ?>">
+                    <input type="hidden" name="hidden_price" id="price<?=$data['id'];?>" value="<?=$data['price'] ?>">
+                    <input type="button" name="add_to_cart" id="<?=$data['id'];?>" class="btn btn-success mt-2 add_to_cart " value="Add To Cart">
                 </div>
-
             </div>
         </div>
 

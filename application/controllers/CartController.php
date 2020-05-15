@@ -31,60 +31,8 @@ class CartController extends Controller
         $this->view->render('cart/index',[$cartContent,$products,$totalPrice]);
     }
 
-
-    public function addAction($id){
-
-        if (isset($_POST['product_id'])){
-            $order_table = '';
-
-            if ($_POST['action'] == 'add'){
-                if (isset($_SESSION['shopping_cart'])){
-                    $is_available = 0;
-                    foreach ($_SESSION['shopping_cart'] as $key => $value){
-                        if ($_SESSION['shopping_cart'][$key]['product_id'] == $_POST['product_id']){
-                            $is_available++;
-                            $_SESSION['shopping_cart'][$key]['product_quantity']
-                                = $_SESSION['shopping_cart'][$key]['product_quantity'] + $_POST['product_quantity'];
-                        }
-                    }
-                    if ($is_available < 1){
-                        $item_array = array(
-                            'product_id' => $_POST['product_id'],
-                            'product_image' => $_POST['product_image'],
-                            'product_name' => $_POST['product_name'],
-                            'product_price' => $_POST['product_price'],
-                            'product_quantity' => $_POST['product_quantity']
-                        );
-                        $_SESSION['shopping_cart'][] = $item_array;
-                    }
-                }
-                else{
-                    $item_array = array(
-                        'product_id' => $_POST['product_id'],
-                        'product_image' => $_POST['product_image'],
-                        'product_name' => $_POST['product_name'],
-                        'product_price' => $_POST['product_price'],
-                        'product_quantity' => $_POST['product_quantity']
-                    );
-                    $_SESSION['shopping_cart'][] = $item_array;
-                }
-
-                $output = array(
-                    'order_table' => $order_table,
-                    'cart_item' => count($_SESSION['shopping_cart'])
-
-                );
-                echo json_encode($output);
-
-
-            }
-        }
-        return true;
-    }
-
-    public function countAction($id){
-//        var_dump($_POST);
-        return true;
+    public function addAction(){
+        Product::addProductToCart();
     }
 
     public function deleteAction($id){

@@ -21,12 +21,26 @@
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AdminProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/controllers/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/CartController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/UserProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/UserProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Order.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/models/SignUpForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/SignUpForm.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/order/updateStatus.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/order/updateStatus.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/cart/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cart/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/cart/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/cart/order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/category/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/layouts/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/recommProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/recommProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/product/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/product/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/myCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/myCart.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +144,8 @@
       <workItem from="1589360735134" duration="12076000" />
       <workItem from="1589448387770" duration="496000" />
       <workItem from="1589450666545" duration="217000" />
-      <workItem from="1589451941195" duration="13557000" />
+      <workItem from="1589451941195" duration="13888000" />
+      <workItem from="1589544902672" duration="12442000" />
     </task>
     <servers />
   </component>
@@ -190,10 +205,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="188" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1587550882775" />
-    <state x="112" y="118" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589500333992">
+    <state x="47" y="101" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589557318612">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="112" y="118" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1589500333992" />
+    <state x="47" y="101" width="1174" height="536" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1589557318612" />
     <state x="343" y="146" key="com.intellij.ide.util.TipDialog" timestamp="1588936017479">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

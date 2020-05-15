@@ -14,7 +14,6 @@ class MainController extends Controller
     {
 
         $categories = Category::getCategories();
-//        $products = Product::ProductsList();
 
         $this->view->setTitle('Main page');
         $this->view->render('main/index',$categories);

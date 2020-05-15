@@ -14,28 +14,6 @@ class ProductController extends Controller
 
         $products = Product::ProductsList();
 
-//        $result = [];
-//        $id = [];
-//        foreach ($products as $i){
-//            array_push($id,$i['id']);
-//        }
-//
-//        $sessId = [];
-//        foreach ($_SESSION['products'] as $key => $val){
-//            array_push($sessId,$key);
-//        }
-//        var_dump($sessId);
-//        for ($i = 0; $i <count($id); $i++){
-//            for ($j = 0; $j <count($sessId); $j++){
-//                if ($sessId[$j] == $id[$i]){
-//                    foreach ($_SESSION['products'] as $key => $val){
-//                        array_push($result,$val);
-//                    }
-//                }
-//            }
-//        }
-//        var_dump($result);
-
 
         $this->view->setTitle('Product');
 

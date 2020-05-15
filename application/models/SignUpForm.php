@@ -66,7 +66,6 @@ class SignUpForm
 
         if ($this->validate() == []){
 
-//            $password = User::hashPassword($this->password);
             User::register($this->first_name,$this->last_name,$this->email,$this->password);
 
             return true;

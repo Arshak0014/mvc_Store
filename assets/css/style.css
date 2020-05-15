@@ -2217,3 +2217,24 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
   top: 26px;
   right: 21px;
 }
+.cart_main{
+  position: absolute;
+  top: -7px;
+  left: -18px;
+  font-family: 'Glyphicons Halflings';
+}
+.product_cards{
+  padding-top: 96px;
+  margin-left: 50px;
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.quantity_input{
+  width: 40px;
+  height: 22px;
+  background: wheat;
+  color: black;
+  padding-left: 13px;
+  font-weight: bold;
+}

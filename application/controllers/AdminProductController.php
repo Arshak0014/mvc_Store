@@ -71,24 +71,15 @@ class AdminProductController extends AdminBaseController
             if (!empty($validate)) {
                 $this->view->render('admin/product/update',[$validate,$productsData,$dataCategories]);
             }
-
-
             if ($model->updateProductById($productsData['id'])){
                 View::redirect('/admin/product');
             }
         }
-
-
-
         $this->view->setTitle('Product Update');
         $this->view->render('admin/product/update',['',$productsData,$dataCategories]);
 
         return true;
     }
-
-
-//$this->view->setTitle('Admin Product Update');
-//$this->view->render('admin/product/update',[$this->errors,$productsData,$dataCategories]);
 
 
     public function deleteAction($id){

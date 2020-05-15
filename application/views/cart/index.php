@@ -1,6 +1,3 @@
-<?php
-//debug($_SESSION['shopping_cart']);
-?>
 <div style="display: flex">
     <div style="margin-right: 40px; padding-top: 55px">
         <?php include 'application/views/layouts/leftSideBar.php'?>
@@ -24,7 +21,12 @@
                             <th class="text-center"></th>
                             <th class="text-center"></th>
                         </tr>
-                        <?php foreach ($_SESSION['shopping_cart'] as $key => $value): ?>
+                        <?php
+
+                        $products = $_SESSION['shopping_cart'];
+                        $reversed_array = array_reverse($products);
+
+                        foreach ($reversed_array as $key => $value): ?>
                             <tr align="center" style="font-size: 16px; font-weight: bold">
                                 <td>
                                     <a href="/product/details/<?php echo $value['product_id'];?>">
@@ -37,8 +39,7 @@
                                     </a>
                                 </td>
                                 <td>
-
-                                    <?=$value['product_quantity'];?>
+                                    <input type="text" disabled name="quantity" id="quantity<?=$value['id'];?>" class="quantity_input" value="<?=$value['product_quantity'];?>">
 
                                 </td>
                                 <td>
@@ -78,12 +79,5 @@
 
 
 </div>
-<script>
 
-
-
-// document.getElementById('plus').onclick = function () {
-
-// }
-</script>
 <?php include 'application/views/main/carousel.php'?>

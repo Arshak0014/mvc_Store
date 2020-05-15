@@ -58,22 +58,6 @@ class Category
     }
 
     public static function getCategoriesListAdmin(){
-//        $page = Router::getPage();
-//
-//        $thisUri = $_SERVER['REQUEST_URI'];
-//
-//
-//        if ($thisUri ==  "/admin/category"){
-//            View::redirect("/admin/category/1");
-//        }
-
-//        $pagination = new Pagination('/admin/product','categories','5','5');
-
-
-//        $limit = $pagination->limit;
-//        $res_per_page = $pagination->result_per_page;
-//
-//        $this_page_first_result = ($page - 1) * $res_per_page;
 
         $db = Db::getConnection();
 
