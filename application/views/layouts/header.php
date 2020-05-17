@@ -31,12 +31,10 @@
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
-<!--    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">-->
-
 
 
 </head>
-<body style="background: gainsboro" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body style="background: wheat" data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
 <div class="site-wrap">
 

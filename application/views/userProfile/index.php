@@ -3,6 +3,7 @@ use application\components\Auth;
 if (Auth::isGuest()){
     \application\components\View::redirect('/account/login/');
 }
+
 ?>
 
 
@@ -52,16 +53,14 @@ if (Auth::isGuest()){
             <!--/col-3-->
             <div class="col-sm-9">
 
-                <ul style="font-size: 20px;" class="nav nav-tabs" id="myTab">
-
-                    <li style=""><a  class="user_prof_tabs" href="#settings" data-toggle="tab">Settings</a></li>
+                <ul style="font-size: 20px;margin-left: 15px;" class="nav nav-tabs" id="myTab">
                     <li><a style="margin: 0;" class="user_prof_tabs" href="/userProfile/shippedOrders">Paid Orders</a></li>
                 </ul>
 
                 <div class="tab-content">
 
 
-                    <div class="" id="">
+                    <div class="mt-5">
                         <?php if (isset($_POST['submit']) && $data[0] == ''):?>
                         <b style="margin-left: 20px; color: green; font-size: 18px">Updated successful !!! :)</b>
                         <?php endif;?>

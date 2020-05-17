@@ -31,14 +31,17 @@ class Auth
         $result = $db->prepare($sql);
         $result->execute();
 
+
         setcookie('email',$email,time()+60*60*7);
         setcookie('cookie_key',$generatePassword,time()+60*60*7);
     }
 
     public static function logout()
     {
-        setcookie('email','',time()-3600);
-        setcookie('cookie_key','',time()-3600);
+        if (isset($_COOKIE['email'])) {
+            unset($_COOKIE['email']);
+            setcookie('email', null, -1, '/');
+        }
         session_unset();
         session_destroy();
         View::redirect('/account/login');

@@ -1958,7 +1958,7 @@ table, .shadowButton{
   text-decoration: none!important;
   color: white;
   font-weight: bold;
-  border: 2px solid lightgray;
+  border: 2px solid darkorange;
   border-radius: 5px;
   box-shadow: -2px 3px 4px 3px #888888;
 }
@@ -1992,16 +1992,14 @@ h3{
 .pagi {
   padding: 5px 10px;
   margin-right: 10px;
-  background: darkred;
-  color: #ffffff;
-  font-weight: bold;
-  border: 2px solid lightgray;
+  background: black;
+  color: darkorange;
+  font-weight: bolder;
   border-radius: 5px;
   box-shadow: -2px 3px 4px 3px #888888;
 }
 .pagi:hover{
-  background: indianred;
-  color: #ffffff;
+  color: white;
   transition: .2s;
   text-decoration: none;
 }
@@ -2192,9 +2190,9 @@ div.section > div > input {margin:0;padding-left:5px;font-size:10px;padding-righ
 }
 
 .status_active{
-  border: 1px solid orange;
+  border: 1px solid green;
   color: white;
-  background: orange;
+  background: green;
   padding: 2px 4px;
 }
 .status_passive{

@@ -1,13 +1,3 @@
-<?php
-use application\components\Auth;
-use application\components\View;
-
-if (!Auth::isGuest()) {
-    View::redirect('/userProfile');
-}
-
-?>
-
 
 <div style="width: 100%">
     <div style="margin: 140px auto ;width: 310px;">
@@ -16,7 +6,7 @@ if (!Auth::isGuest()) {
 
         <div class="agileits-top">
             <form action="#" method="post">
-                <input type="email" name="email" id="email" placeholder="Email" class="textInput" value="<?php echo $data[1][0]; ?>">
+                <input type="email" name="email" id="email" placeholder="Email" class="textInput" value="<?php echo isset($_COOKIE["email"]) ? $_COOKIE["email"] :  $data[1][0]; ?>">
                 <input type="password" name="password" id="password" placeholder="Password" class="textInput" value="<?php echo $data[1][1]; ?>">
                 <div style="margin: 0;">
                     <label class="anim">
@@ -34,7 +24,7 @@ if (!Auth::isGuest()) {
                     </ul>
                 <?php endif; ?>
 
-                <input style="width: 290px;" type="submit" name="submit" class="textInput btn-success submit_cl" value="Sign In">
+                <input style="width: 290px;" type="submit" name="submit" class="textInput btn-warning submit_cl" value="Sign In">
 
 
                 <b><a style="margin-left: 25px;" href="/account/register">Sign Up ?</a></b>

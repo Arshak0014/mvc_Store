@@ -1,4 +1,4 @@
-
+<?php //debug($_POST); ?>
 <form method="post" enctype="multipart/form-data">
 
     <h2>Create a product</h2>
@@ -11,9 +11,9 @@
         <?php endforeach; ?>
     </select><br>
 
-    <input class="create_page_inputs" placeholder="Write Products" type="text" name="product_name"/><br>
+    <input class="create_page_inputs" placeholder="Write Products" type="text" name="product_name" value="<?= isset($_POST['product_name']) ? $_POST['product_name'] : null  ?>"/><br>
 
-    <input class="create_page_inputs" type="file" name="image"><br>
+    <input class="create_page_inputs" type="file" name="image" value="<?= isset($_FILES["image"]["name"]) ? $_FILES["image"]["name"] : null  ?>"><br>
 
     <select class="create_page_inputs" name="is_new">
         <option disabled selected value>Is new?</option>
@@ -22,9 +22,9 @@
     </select><br>
 
     <textarea name="product_description" class="create_page_inputs"
-              placeholder="Write escription" cols="30" rows="10"></textarea><br>
+              placeholder="Write escription" cols="30" rows="10"><?= isset($_POST['product_description']) ? $_POST['product_description'] : null  ?></textarea><br>
 
-    <input class="create_page_inputs" placeholder="Write Price" type="text" name="product_price"/><br>
+    <input class="create_page_inputs" placeholder="Write Price" type="text" name="product_price" value="<?= isset($_POST['product_price']) ? $_POST['product_price'] : null  ?>"/><br>
 
     <div>
         <?php if (isset($data[0]) && is_array($data[0])): ?>

@@ -63,7 +63,7 @@
                     </ul>
                 <?php endif; ?>
 
-                <input style="margin-top: 15px" type="submit" name="submit" class="btn-success submit_cl" value="Sign Up">
+                <input style="margin-top: 15px" type="submit" name="submit" class="btn-warning submit_cl" value="Sign Up">
 
                 <b><a href="/account/login">Sign In ?</a></b>
             </form>

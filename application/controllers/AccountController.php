@@ -20,7 +20,9 @@ class AccountController extends Controller
 
     public function loginAction()
     {
-
+        if (!Auth::isGuest()) {
+            View::redirect('/userProfile');
+        }
 
         $email = false;
         $password = false;
@@ -30,15 +32,9 @@ class AccountController extends Controller
          $email = $_POST['email'];
          $password = $_POST['password'];
 
-              if (!User::checkEmail($email)) {
-                  $this->errors[] = 'Email is not correct';
-              }
-              if (!User::checkPassword($password)) {
-                  $this->errors[] = 'Password must be min 6 chars';
-              }
+         LoginForm::loginValidate($email,$password,$this->errors);
 
-              $userId = User::checkUserData($email, $password);
-
+         $userId = User::checkUserData($email, $password);
 
             if ($userId == false) {
 
@@ -47,7 +43,7 @@ class AccountController extends Controller
 
                 $roleId = '';
 
-                LoginForm::checkRole($roleId);
+                LoginForm::checkRole();
 
                 if ($roleId == $userId){
                     User::auth($userId);
@@ -93,7 +89,9 @@ class AccountController extends Controller
 
     public function registerAction()
     {
-        $confirmRegister = '';
+        if (!Auth::isGuest()) {
+            View::redirect('/userProfile');
+        }
 
         if (!empty($_POST) && isset($_POST['submit'])){
             $model = new SignUpForm($_POST);

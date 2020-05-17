@@ -63,11 +63,9 @@ class SignUpForm
 
     public function register()
     {
-
         if ($this->validate() == []){
 
             User::register($this->first_name,$this->last_name,$this->email,$this->password);
-
             return true;
         }
         return false;

@@ -99,8 +99,6 @@ class Product
         $page = Router::getPage();
 
 
-
-
         $db = Db::getConnection();
 
         $result = $db->query("SELECT products.*, categories.name AS cat_name FROM products 
@@ -229,6 +227,41 @@ class Product
 
     }
 
+    public static function getProductsListByCategory(){
+        $url = trim($_SERVER['REQUEST_URI'],'/');
+
+
+        $arrUrl = explode('/', $url);
+
+        $page = Router::getPage();
+
+        $pagination = new Pagination('/category/'.$arrUrl[1].'/','products','9','9');
+
+        $limit = $pagination->limit;
+        $res_per_page = $pagination->result_per_page;
+        $this_page_first_result = ($page - 1) * $res_per_page;
+
+        $db = Db::getConnection();
+
+        $result = $db->query("SELECT * FROM products WHERE categories_id = $arrUrl[1] ORDER BY id DESC LIMIT $this_page_first_result,$limit");
+
+        $i = 0;
+        $productList = array();
+        while ($row = $result->fetch()) {
+            $productList[$i]['id'] = $row['id'];
+            $productList[$i]['name'] = $row['name'];
+            $productList[$i]['categories_id'] = $row['categories_id'];
+            $productList[$i]['description'] = $row['description'];
+            $productList[$i]['price'] = $row['price'];
+            $productList[$i]['image'] = $row['image'];
+            $productList[$i]['is_new'] = $row['is_new'];
+            $productList[$i]['create_date'] = $row['create_date'];
+            $productList[$i]['update_date'] = $row['update_date'];
+            $i++;
+        }
+        return $productList;
+    }
+
 
     public static function ProductsList(){
         $page = Router::getPage();
@@ -323,7 +356,6 @@ class Product
             move_uploaded_file($fileTmpName,$dest);
 
         }
-        var_dump($id);
 
         if ($this->validate() == []){
             $update = Db::getConnection()->prepare("UPDATE `products` SET `name` = '$this->name', `categories_id` = '$this->categories_id', `description` = '$this->description',`image` = '$this->image', `price` = '$this->price', `is_new` = '$this->is_new', `create_date` = now(), `update_date` = now() WHERE `products`.`id` = '$id';");

@@ -5,24 +5,16 @@ namespace application\controllers;
 
 
 use application\base\Controller;
+use application\models\Product;
 
 class CategoryController extends Controller
 {
     public function indexAction(){
 
-        $products_list = \application\models\Product::getProducts();
+        $products = Product::getProductsListByCategory();
 
-        $result = array();
-        $url = trim($_SERVER['REQUEST_URI'],'/');
 
-        $arrUrl = explode('/', $url);
-
-        foreach ($products_list as $x){
-            if ($arrUrl[1] == $x['categories_id']){
-                array_push($result, $x);
-            }
-        }
         
-        $this->view->render('category/index',$result);
+        $this->view->render('category/index',$products);
     }
 }

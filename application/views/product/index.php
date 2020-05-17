@@ -19,7 +19,7 @@
                 <input type="hidden" name="hidden_image" id="image<?=$product['id'];?>" value="<?=$product['image'] ?>">
                 <input type="hidden" name="hidden_name" id="name<?=$product['id'];?>" value="<?=$product['name'] ?>">
                 <input type="hidden" name="hidden_price" id="price<?=$product['id'];?>" value="<?=$product['price'] ?>">
-                <input type="button" name="add_to_cart" id="<?=$product['id'];?>" class="btn btn-success mt-2 add_to_cart " value="Add To Cart">
+                <input type="button" name="add_to_cart" id="<?=$product['id'];?>" class="btn btn-warning mt-2 add_to_cart " value="Add To Cart">
 
             </div>
 

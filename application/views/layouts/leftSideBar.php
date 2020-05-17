@@ -13,7 +13,7 @@ $products_list = \application\models\Product::getProducts();
         <ul>
             <?php foreach ($categories_list_left_side as $x):?>
                 <li class="m-2">
-                    <a href="/category/<?=$x['id']?>" class="w3-bar-item w3-button"><?=$x['name']?></a>
+                    <a href="/category/<?=$x['id']?>/1" class="w3-bar-item w3-button"><?=$x['name']?></a>
                 </li>
             <?php endforeach;?>
         </ul>

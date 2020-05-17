@@ -29,8 +29,12 @@ return [
         'controller' => 'account',
         'action' => 'logout',
     ],
-
     'category/([0-9]+)' => [
+        'controller' => 'category',
+        'action' => 'index',
+    ],
+
+    'category/([0-9]+)/([0-9]+)' => [
         'controller' => 'category',
         'action' => 'index',
     ],

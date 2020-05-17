@@ -20,12 +20,12 @@ class Pagination
     }
 
 
-    public function html()
+    public function html($whereQuery = '')
     {
         $content = '';
 
         $db = Db::getConnection();
-        $data = $db->query("SELECT * FROM $this->tableName ORDER BY id DESC");
+        $data = $db->query("SELECT * FROM $this->tableName $whereQuery ORDER BY id DESC");
         $data->execute();
         $categoryList = $data->fetchAll(\PDO::FETCH_ASSOC);
 

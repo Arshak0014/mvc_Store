@@ -19,13 +19,13 @@
                         <div style="font-size: 16px"><?=$data['price'] ?>$</div>
                     </div>
 
-                    <div style="background: gainsboro" class="section">
+                    <div style="background: wheat" class="section">
                         <h6 class="titles title-attr" style="margin-top:15px;" ><span>Description</span></h6>
                         <div>
                             <?=$data['description'] ?>
                         </div>
                     </div>
-                    <div style="background: gainsboro;padding-bottom:5px;" class="section">
+                    <div style="background: wheat;padding-bottom:5px;" class="section">
                         <h6 class="titles title-attr"><span>Status</span></h6>
                         <div>
                         <?php if ($data['is_new'] == '1'):?>
@@ -35,7 +35,7 @@
                         <?php endif; ?>
                         </div>
                     </div>
-                    <div style="background: gainsboro" class="section">
+                    <div style="background: wheat" class="section">
                         <h6 class="titles title-attr" style="margin-top:15px;" ><span>Adding Time</span></h6>
                         <div>
                             <?=$data['update_date'] ?>
@@ -51,7 +51,7 @@
                     <input type="hidden" name="hidden_image" id="image<?=$data['id'];?>" value="<?=$data['image'] ?>">
                     <input type="hidden" name="hidden_name" id="name<?=$data['id'];?>" value="<?=$data['name'] ?>">
                     <input type="hidden" name="hidden_price" id="price<?=$data['id'];?>" value="<?=$data['price'] ?>">
-                    <input type="button" name="add_to_cart" id="<?=$data['id'];?>" class="btn btn-success mt-2 add_to_cart " value="Add To Cart">
+                    <input type="button" name="add_to_cart" id="<?=$data['id'];?>" class="btn btn-warning mt-2 add_to_cart " value="Add To Cart">
                 </div>
             </div>
         </div>

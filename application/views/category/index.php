@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 
 <div style="display: flex">
     <div style="padding-top: 46px;">
@@ -24,7 +20,7 @@
                 <input type="hidden" name="hidden_image" id="image<?=$product['id'];?>" value="<?=$product['image'] ?>">
                 <input type="hidden" name="hidden_name" id="name<?=$product['id'];?>" value="<?=$product['name'] ?>">
                 <input type="hidden" name="hidden_price" id="price<?=$product['id'];?>" value="<?=$product['price'] ?>">
-                <input type="button" name="add_to_cart" id="<?=$product['id'];?>" class="btn btn-success mt-2 add_to_cart " value="Add To Cart">
+                <input type="button" name="add_to_cart" id="<?=$product['id'];?>" class="btn btn-warning mt-2 add_to_cart " value="Add To Cart">
 
             </div>
 
@@ -32,4 +28,15 @@
 
     </div>
 </div>
+    <div align="right" style="margin: 13px 25px 33px 0px;">
+        <?php
+        $url = trim($_SERVER['REQUEST_URI'],'/');
+        $arrUrl = explode('/', $url);
+
+        $pagination = new \application\components\Pagination('/category/'.$arrUrl[1].'/','products','9','9');
+
+        $pagination->html('where categories_id = '.$arrUrl[1]);
+
+        ?>
+    </div>
 <?php include 'application/views/main/carousel.php'?>

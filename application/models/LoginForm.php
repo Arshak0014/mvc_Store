@@ -21,18 +21,30 @@ class LoginForm
         $this->rememberMe = $post['rememberMe'];
     }
 
-    public static function checkRole($id){
+    public static function loginValidate($email,$password,$err){
+        if (!User::checkEmail($email)) {
+            $err = 'Email is not correct';
+        }
+        if (!User::checkPassword($password)) {
+            $err = 'Password must be min 6 chars';
+        }
+    }
+
+    public static function checkRole(){
         $db = Db::getConnection();
 
         $sql = 'SELECT * FROM users';
 
         $result = $db->prepare($sql);
-        $result->bindParam(':role', $role, \PDO::PARAM_STR);
+//        $result->bindParam(':role', $role, \PDO::PARAM_INT);
+
+        $result->setFetchMode(\PDO::FETCH_ASSOC);
         $result->execute();
 
         $user = $result->fetch();
 
-        $id = $user["id"];
+
+        return $user;
     }
 
 
