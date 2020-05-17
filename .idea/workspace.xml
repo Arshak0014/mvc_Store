@@ -20,27 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdf4fa58-d2f2-4d84-9d03-7ce6e19f58c1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/Auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/components/Pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/components/Pagination.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/config/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/config/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/CategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/LoginForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/LoginForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/SignUpForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/models/SignUpForm.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/account/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/account/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/account/register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/product/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/product/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/category/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/category/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layouts/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layouts/leftSideBar.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/layouts/leftSideBar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/carousel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/recommProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/recommProducts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/product/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/product/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/product/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/userProfile/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/userProfile/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store.sql" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +127,7 @@
       <workItem from="1589451941195" duration="13888000" />
       <workItem from="1589544902672" duration="13215000" />
       <workItem from="1589622684357" duration="14409000" />
-      <workItem from="1589707448140" duration="12535000" />
+      <workItem from="1589707448140" duration="12855000" />
     </task>
     <servers />
   </component>
