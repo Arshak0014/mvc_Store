@@ -23,9 +23,6 @@ function debug($str){
     exit;
 }
 
-
-
-
 define('ROOT', dirname(__FILE__));
 
 $router = new Router();

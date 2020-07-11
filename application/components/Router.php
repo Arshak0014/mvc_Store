@@ -12,8 +12,6 @@ class Router
     public function __construct(){
         $arr = require_once 'application/config/routes.php';
 
-
-
         foreach ($arr as $key => $val){
             $this->add($key,$val);
         }
@@ -22,12 +20,14 @@ class Router
     public function add($route, $params) {
 
         $route = '#^'.$route.'$#';
+
         $this->routes[$route] = $params;
     }
 
     public function match(){
 
         $url = trim($_SERVER['REQUEST_URI'],'/');
+
         foreach ($this->routes as $route => $params){
             if (preg_match($route, $url, $matches)){
                 $this->params = $params;
@@ -47,6 +47,7 @@ class Router
         } else {
             $page = $paging;
         }
+
         return $page;
     }
 

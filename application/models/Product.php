@@ -230,7 +230,6 @@ class Product
     public static function getProductsListByCategory(){
         $url = trim($_SERVER['REQUEST_URI'],'/');
 
-
         $arrUrl = explode('/', $url);
 
         $page = Router::getPage();

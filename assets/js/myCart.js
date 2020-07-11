@@ -16,7 +16,6 @@ $(document).ready(function (data) {
           var product_price = $('#price'+product_id).val();
           var product_quantity = $('#quantity'+product_id).val();
           var action = "add";
-          console.log(product_name)
 
           if (product_quantity > 0){
                $.ajax({

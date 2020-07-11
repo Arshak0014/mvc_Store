@@ -12,8 +12,6 @@ class CategoryController extends Controller
     public function indexAction(){
 
         $products = Product::getProductsListByCategory();
-
-
         
         $this->view->render('category/index',$products);
     }

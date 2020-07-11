@@ -14,8 +14,6 @@ class CartController extends Controller
 {
     public function indexAction(){
 
-
-
         $cartContent = false;
         $cartContent = Product::getProductFromSess();
         $products = null;

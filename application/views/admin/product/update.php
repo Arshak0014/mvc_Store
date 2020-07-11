@@ -3,12 +3,7 @@
 
     <h2>Update Product</h2>
     <select class="create_page_inputs" style="padding: 8px; width: 260px;" name="category">
-<!--        --><?php
-//            foreach ($data[2] as $y){
-//                ?>
-<!--                <option value="--><?//= $y['id']?><!--" --><?php //if ($y['id'] == $data[1]['categories_id']) { ?><!-- selected --><?php //} ?><!-- >--><?//= $y['name']?><!--</option>-->
-<!--                --><?php //}
-//            ?>
+
         <?php foreach ($data[2] as $y): ?>
             <option value="<?= $y['id'] ?>" <?= $y['id'] == $data[1]['categories_id'] ? 'selected' : '' ?>><?= $y['name'] ?></option>
         <?php endforeach; ?>
